@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>System Display</title>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/d3.js"></script>
+    <script src="js/project.js"></script>
+    <script src="js/experiment.js"></script>
+</head>
+<body style="padding:0;margin: 0">
+
+<div id="project_container" style="width: 100vw; height:100vh; padding: 0; margin: 0; position: relative">
+    <div id="agent_view_div" style="position: absolute; height: 100vh; width: 100vh; left:0; top:0; overflow: hidden">
+
+    </div>
+    <div id="info_view_div"
+         style="position: absolute; height: 100vh; width: calc(100vw - 100vh); left: 100vh;overflow: hidden">
+
+    </div>
+</div>
+<script>
+    var displays = init_display("agent_view_div", "info_view_div");
+
+    init_display_agents(sys1, displays.agent_view);
+    function render() {
+        update_display_agents(sys1, displays.agent_view);
+        render_display_agents(sys1, displays.agent_view)
+        random_move_agent_display(sys1, displays.agent_view)
+        step(sys1)
+        setTimeout(render, 1000)
+
+    }
+    render();
+
+</script>
+</body>
+</html>
