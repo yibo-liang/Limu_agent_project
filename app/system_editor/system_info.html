@@ -1,0 +1,70 @@
+<div ng-controller="systemInfoController">
+    <div style="width: 960px; height: 100vh; ">
+        <div class="grid col-div-container" style="height: 600px;">
+            <div class="col-div" style="left: 0;"></div>
+            <div class="col-div" style="left: 33.3%;"></div>
+            <div class="col-div" style="left: 66.6%;"></div>
+            <div class="col-div" style="left: 100%;"></div>
+
+            <div class="row cells3">
+                <div class="cell padded">
+                    <h3 class="header" style="text-align: center"> General Information</h3>
+                    <div class="h-divider"></div>
+
+                    <div class="listview-outlook">
+                        <div class="list">
+                            <div class="list-content">
+                                <span class="list-title">
+                                Name:
+                                </span>
+                                <div style="text-align: center; font-size: 24px;">{{system.name}} System1</div>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="list-content">
+                                <span class="list-title">
+                                Total Space:
+                                </span>
+                                <div style="text-align: center; font-size: 24px;">{{system.space}} 2000</div>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="list-content">
+                                <span class="list-title">
+                                Particles:
+                                </span>
+                                <div style="text-align: center; font-size: 24px;">{{system.particle_description.length}}
+                                    4
+                                    <span style="font-size: 16px">types</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="list-content">
+                                <span class="list-title">
+                                Agents:
+                                </span>
+                                <div style="text-align: center; font-size: 24px;">{{system.agent_descriptions.length}} 5
+                                    <span style="font-size: 16px">types</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="cell padded">
+                    <h3 class="header" style="text-align: center"> Particles Information</h3>
+                    <div class="h-divider"></div>
+                    <particle-list></particle-list>
+                </div>
+                <div class="cell padded">
+                    <h3 class="header" style="text-align: center"> Agents Information</h3>
+                    <div class="h-divider"></div>
+                    <agent-list></agent-list>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

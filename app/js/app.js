@@ -11,6 +11,11 @@ app.controller("systemListController", ['$scope',
         $scope.systems = [{name: "sys1"}, {name: "sys2"}];
     }]);
 
+app.controller("systemInfoController", ['$scope',
+    function ($scope) {
+
+    }]);
+
 
 //directives
 
@@ -33,34 +38,34 @@ app.directive("systemList", [function () {
 app.directive("systemInfo", [function () {
     return {
         restrict: "E",
-        templateUrl: "../system_editor/system_info.html"
+        templateUrl: "../app/system_editor/system_info.html"
     }
 }]);
 
 app.directive("agentList", [function () {
     return {
         restrict: "E",
-        templateUrl: "../system_editor/agent_list.html"
+        templateUrl: "../app/system_editor/agent_list.html"
     }
 }]);
 
 app.directive("agentInfo", [function () {
     return {
         restrict: "E",
-        templateUrl: "../system_editor/agent_info.html"
+        templateUrl: "../app/system_editor/agent_info.html"
     }
 }]);
 
 app.directive("particleList", [function () {
     return {
         restrict: "E",
-        templateUrl: "../system_editor/particle_list.html"
+        templateUrl: "../app/system_editor/particle_list.html"
     }
 }]);
 
 app.directive("particleInfo", [function () {
     return {
         restrict: "E",
-        templateUrl: "../system_editor/particle_info.html"
+        templateUrl: "../app/system_editor/particle_info.html"
     }
 }]);

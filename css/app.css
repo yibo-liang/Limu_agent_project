@@ -1,0 +1,31 @@
+.col-div-container{
+    position: relative;
+}
+
+.col-div{
+    display: block;
+    position: absolute;
+    margin-top:30px;
+    margin-bottom: 30px;
+    height: calc(100% - 60px);
+    width: 1px;
+    background-color: #eaeaea;
+
+}
+
+
+.padded{
+    padding: 6px;
+}
+
+.h-divider{
+    height: 1px; width: 100%; left:0px; background-color: #eaeaea;
+}
+
+.list-large-text{
+    text-align: left; font-size: 24px;
+}
+
+.bold{
+    font-weight: 700;
+}

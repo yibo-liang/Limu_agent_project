@@ -1,194 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51d9e12a-dbe2-4943-8511-5a939b89cc48" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/metro.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/metro.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/metro.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/angular_min_js.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/system_display/system_display.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/system_editor/agent_info.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/system_editor/agent_list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/system_editor/particle_info.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/system_editor/particle_list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/system_editor/system_editor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/system_editor/system_info.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/system_editor/system_list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/metro.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/metro.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/selection.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index_backup.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/angular.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/metro.min.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/.versions" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/accordion.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/accordion.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/accordion.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/accordion.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/ad.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/ad.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/api.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/api.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/breadcrumb.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/breadcrumb.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/button.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/button.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/card.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/card.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/checkbox.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/checkbox.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/checkbox.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/checkbox.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/colorize.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/colorize.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/comment.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/comment.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/container.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/container.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dimmer.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dimmer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dimmer.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dimmer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/divider.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/divider.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dropdown.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dropdown.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dropdown.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/dropdown.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/embed.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/embed.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/embed.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/embed.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/feed.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/feed.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/flag.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/flag.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/form.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/form.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/form.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/form.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/grid.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/grid.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/header.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/header.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/icon.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/icon.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/image.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/image.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/input.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/item.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/item.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/label.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/label.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/list.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/list.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/loader.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/loader.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/menu.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/menu.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/message.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/message.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/modal.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/modal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/modal.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/modal.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/nag.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/nag.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/nag.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/nag.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/popup.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/popup.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/popup.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/popup.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/progress.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/progress.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/progress.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/progress.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/rail.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/rail.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/rating.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/rating.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/rating.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/rating.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/reset.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/reset.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/reveal.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/reveal.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/search.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/search.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/search.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/search.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/segment.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/segment.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/shape.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/shape.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/shape.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/shape.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sidebar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sidebar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sidebar.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sidebar.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/site.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/site.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/site.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/site.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/state.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/state.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/statistic.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/statistic.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/step.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/step.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sticky.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sticky.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sticky.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/sticky.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/tab.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/tab.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/tab.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/tab.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/table.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/table.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/transition.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/transition.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/transition.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/transition.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/video.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/video.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/video.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/video.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/visibility.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/visibility.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/visit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/components/visit.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/npm-debug.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/package.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/semantic.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/semantic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/semantic.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/semantic.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Semantic-UI-CSS-master/themes/default/assets/images/flags.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/LiMu.iml" afterPath="$PROJECT_DIR$/.idea/LiMu.iml" />
+    <list default="true" id="51d9e12a-dbe2-4943-8511-5a939b89cc48" name="Default" comment="Template almost done">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/app.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/metro-colors.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/metro-icons.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/app.js" afterPath="$PROJECT_DIR$/app/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/system_editor/agent_list.html" afterPath="$PROJECT_DIR$/app/system_editor/agent_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/system_editor/particle_list.html" afterPath="$PROJECT_DIR$/app/system_editor/particle_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/system_editor/system_editor.html" afterPath="$PROJECT_DIR$/app/system_editor/system_editor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/system_editor/system_info.html" afterPath="$PROJECT_DIR$/app/system_editor/system_info.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/system_editor/system_list.html" afterPath="$PROJECT_DIR$/app/system_editor/system_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system_display.html" afterPath="$PROJECT_DIR$/system_display.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/d3.js" afterPath="$PROJECT_DIR$/lib/d3.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/experiment.js" afterPath="$PROJECT_DIR$/app/js/experiment.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery-3.1.1.min.js" afterPath="$PROJECT_DIR$/lib/jquery-3.1.1.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/project.js" afterPath="$PROJECT_DIR$/app/js/project.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/rhaboo.min.js" afterPath="$PROJECT_DIR$/lib/rhaboo.min.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -206,29 +30,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index_backup.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index_backup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-              <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+            <state relative-caret-position="224">
+              <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -237,20 +43,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-              <folding>
-                <marker date="1484241587255" expanded="true" signature="311:434" ph="[...]" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="particle_info.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/system_editor/particle_info.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="112">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -260,18 +54,41 @@
         <entry file="file://$PROJECT_DIR$/app/system_editor/particle_list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="system_list.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="agent_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/system_editor/agent_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="system_list.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/system_editor/system_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="1" column="3" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="4" selection-end-column="10" />
-              <folding />
+            <state relative-caret-position="160">
+              <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -279,8 +96,46 @@
       <file leaf-file-name="system_info.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/system_editor/system_info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="256">
+              <caret line="16" column="57" lean-forward="true" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#2;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/js/project.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="608">
+              <caret line="64" column="25" lean-forward="true" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+              <folding>
+                <element signature="n#!!doc;n#new_particle#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/app.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -289,19 +144,12 @@
       <file leaf-file-name="system_editor.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/system_editor/system_editor.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="system_display.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/system_display/system_display.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="80">
+              <caret line="5" column="47" lean-forward="false" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -313,6 +161,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -321,6 +170,8 @@
       <find>agent</find>
       <find>info</find>
       <find>../</find>
+      <find>icon</find>
+      <find>green</find>
     </findStrings>
     <replaceStrings>
       <replace>element</replace>
@@ -338,16 +189,17 @@
         <option value="$PROJECT_DIR$/js/project.js" />
         <option value="$PROJECT_DIR$/js/experiment.js" />
         <option value="$PROJECT_DIR$/system_display.html" />
-        <option value="$PROJECT_DIR$/app/system_editor/agent_list.html" />
         <option value="$PROJECT_DIR$/app/system_editor/agent_info.html" />
         <option value="$PROJECT_DIR$/app/system_display/system_display.html" />
-        <option value="$PROJECT_DIR$/app/system_editor/system_info.html" />
-        <option value="$PROJECT_DIR$/app/system_editor/particle_list.html" />
         <option value="$PROJECT_DIR$/app/system_editor/particle_info.html" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/app/system_editor/system_list.html" />
         <option value="$PROJECT_DIR$/app/system_editor/system_editor.html" />
         <option value="$PROJECT_DIR$/app/js/app.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/app/system_editor/particle_list.html" />
+        <option value="$PROJECT_DIR$/app/system_editor/system_info.html" />
+        <option value="$PROJECT_DIR$/css/app.css" />
+        <option value="$PROJECT_DIR$/app/system_editor/agent_list.html" />
+        <option value="$PROJECT_DIR$/app/system_editor/system_list.html" />
       </list>
     </option>
   </component>
@@ -497,8 +349,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -508,6 +360,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/angular.min.js" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -607,19 +460,29 @@
       <workItem from="1483535401017" duration="2712000" />
       <workItem from="1484062942775" duration="9000" />
       <workItem from="1484145214158" duration="2000" />
-      <workItem from="1484234841696" duration="7183000" />
+      <workItem from="1484234841696" duration="7242000" />
+      <workItem from="1484318107366" duration="9962000" />
     </task>
+    <task id="LOCAL-00001" summary="Rework with Angular&#10;">
+      <created>1484242099363</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1484242099363</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47223000" />
+    <option name="totallyTimeSpent" value="57244000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32910052" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19556025" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910052" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -642,11 +505,120 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Rework with Angular&#10;" />
+    <MESSAGE value="Template almost done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Template almost done" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index_backup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/system_editor/particle_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/system_editor/particle_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/system_editor/system_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="3" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="4" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/system_editor/system_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#2;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/system_editor/system_editor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/system_display/system_display.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/system_display.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -874,16 +846,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project_naive.js" />
-    <entry file="file://$PROJECT_DIR$/app/js/project.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1888">
-          <caret line="120" column="30" lean-forward="false" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="30" />
-          <folding>
-            <element signature="n#!!doc;n#new_particle#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/js/experiment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -894,19 +856,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/system_editor/agent_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/system_editor/agent_info.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -923,9 +876,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/system_display/system_display.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" lean-forward="true" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/metro.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="3650" column="30" lean-forward="false" selection-start-line="3650" selection-start-column="26" selection-end-line="3650" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/system_editor/particle_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index_backup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
+        <state relative-caret-position="16">
           <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -939,34 +916,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/system_editor/particle_info.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="224">
+          <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/system_editor/system_info.html">
+    <entry file="file://$PROJECT_DIR$/app/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/system_display/system_display.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/system_editor/system_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="3" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="4" selection-end-column="10" />
+        <state relative-caret-position="112">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -974,34 +935,98 @@
     <entry file="file://$PROJECT_DIR$/app/system_editor/particle_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="64" column="25" lean-forward="true" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!doc;n#new_particle#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/system_editor/system_editor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="80">
+          <caret line="5" column="47" lean-forward="false" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
           <folding>
-            <marker date="1484241587255" expanded="true" signature="311:434" ph="[...]" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/css/metro-colors.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        <state relative-caret-position="176">
+          <caret line="0" column="1968" lean-forward="false" selection-start-line="0" selection-start-column="1963" selection-end-line="0" selection-end-column="1968" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/system_editor/system_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="57" lean-forward="true" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#2;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/system_editor/agent_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/system_editor/system_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
