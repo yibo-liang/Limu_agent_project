@@ -1,16 +1,16 @@
-<div class="cell" ng-controller="systemListController" style="width: 275px; height: 100vh;">
+<div class="cell" style="width: 275px; height: 100vh;">
 
     <ul class="sidebar2" style="height: 100vh; width: 250px!important;">
         <li class="title" style="height: 60px;">
             <div style="padding:5px; display: inline-block">Systems</div>
 
-            <button class="button">
-                <span class="mif-plus"></span>
+            <button class="button" ng-click="add_system()">
+                <span class="mif-plus" ></span>
                 New
             </button>
         </li>
         <li class="list" ng-repeat="i in systems">
-            <a><span class="mif-microscope"></span>
+            <a href="#" ng-click="select(i)"><span class="mif-microscope"></span>
                 {{i.name}}
             </a>
         </li>

@@ -29,3 +29,16 @@
 .bold{
     font-weight: 700;
 }
+
+.hover-input-textbox{
+    border-bottom: solid;
+    border-bottom-width: 1px!important;
+    /* border-bottom-color: #848b8f; */
+    outline: none;
+    margin-top:1px;
+}
+
+.label-small{
+    font-size:10px;
+    font-weight: 400;
+}

@@ -47,7 +47,7 @@ sys1.agent_list={
     "plant": 20,
     "chicken": 100
 }
-sys1.particle_description=particles;
+sys1.particle_descriptions=particles;
 sys1.space=2000;
 sys1.particle_list={
     "H2O": 5000,

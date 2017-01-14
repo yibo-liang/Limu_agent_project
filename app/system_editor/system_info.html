@@ -1,4 +1,4 @@
-<div ng-controller="systemInfoController">
+<div ng-show="system!==null">
     <div style="width: 960px; height: 100vh; ">
         <div class="grid col-div-container" style="height: 600px;">
             <div class="col-div" style="left: 0;"></div>
@@ -17,7 +17,7 @@
                                 <span class="list-title">
                                 Name:
                                 </span>
-                                <div style="text-align: center; font-size: 24px;">{{system.name}} System1</div>
+                                <div style="text-align: center; font-size: 24px;">{{system.name}}</div>
                             </div>
                         </div>
                         <div class="list">
@@ -25,7 +25,7 @@
                                 <span class="list-title">
                                 Total Space:
                                 </span>
-                                <div style="text-align: center; font-size: 24px;">{{system.space}} 2000</div>
+                                <div style="text-align: center; font-size: 24px;">{{system.space}}</div>
                             </div>
                         </div>
                         <div class="list">
@@ -33,8 +33,7 @@
                                 <span class="list-title">
                                 Particles:
                                 </span>
-                                <div style="text-align: center; font-size: 24px;">{{system.particle_description.length}}
-                                    4
+                                <div style="text-align: center; font-size: 24px;">{{system.particle_descriptions.length}}
                                     <span style="font-size: 16px">types</span>
                                 </div>
                             </div>
@@ -44,7 +43,7 @@
                                 <span class="list-title">
                                 Agents:
                                 </span>
-                                <div style="text-align: center; font-size: 24px;">{{system.agent_descriptions.length}} 5
+                                <div style="text-align: center; font-size: 24px;">{{system.agent_descriptions.length}}
                                     <span style="font-size: 16px">types</span>
                                 </div>
                             </div>
@@ -56,12 +55,12 @@
                 <div class="cell padded">
                     <h3 class="header" style="text-align: center"> Particles Information</h3>
                     <div class="h-divider"></div>
-                    <particle-list></particle-list>
+                    <particle-list system="system"></particle-list>
                 </div>
                 <div class="cell padded">
                     <h3 class="header" style="text-align: center"> Agents Information</h3>
                     <div class="h-divider"></div>
-                    <agent-list></agent-list>
+                    <agent-list system="system"></agent-list>
                 </div>
             </div>
         </div>

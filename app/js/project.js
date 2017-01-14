@@ -2,17 +2,27 @@
  * Created by Devid on 31/12/2016.
  */
 
-function new_particle(name, ptype, info) {
-    if (typeof ptype === "undefined") {
-        ptype = "normal"
+function makeid(n)
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < n; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
+
+function new_particle(name, growth) {
+    if (typeof name === "undefined") {
+        name = makeid(6);
     }
-    if (typeof info === "undefined") {
-        info = "";
+    if (typeof growth=== "undefined") {
+        growth = 0;
     }
     return {
         name: name,
-        type: ptype,
-        info: info
+        growth: growth
     }
 }
 
@@ -28,9 +38,10 @@ function new_agent_description(name, space, growth, particle_interaction, non_pa
 }
 
 function particle_interaction(name, amount) {
+
     return {
         name: name,
-        amount: amount
+        amount: amount,
     }
 }
 
@@ -59,7 +70,7 @@ function new_system() {
         space: 0,
         remaining_space: 0,
         particle_list: {},
-        particle_description: [],
+        particle_descriptions: [],
         agent_list: {},
         agent_descriptions: [],
         agent_display: []

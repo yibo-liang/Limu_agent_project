@@ -1,41 +1,45 @@
 <div class="listview-outlook">
-    <div class="list" style="padding-top: 10px; padding-bottom: 10px">
+    <div class="list" ng-click="add_new_agent()">
+        <a href="#">
+            <div style="padding: 15px">
+                Add New Agent...
+            </div>
+        </a>
+    </div>
+    <div class="list" style="padding-top: 10px; padding-bottom: 10px" ng-repeat="i in system.agent_description">
         <div class="list-content">
-            <div>
-                <span class="bold">
-                Agent:
-                </span>
-                <div style="display: inline-block; right:10px; position: absolute; padding: 10px">
+
+
+            <div style="position: relative">
+                <div style="display: block; right:10px; position: absolute; padding: 0 10px 0 0">
+                    <div class="label-small">Amount</div>
                     <a style="display: inline-block" href="#"><span class="mif-minus fg-gray"></span></a>
                     <div class="bold" style="font-size: 32px; display: inline-block">32</div>
                     <a style="display: inline-block" href="#"><span class="mif-plus fg-gray"></span></a>
                 </div>
             </div>
-            <div class="list-large-text">Water</div>
-            <div style="padding-top: 15px;" >
-                <span style="display: inline!important;" class="list-title bold">Interactions</span>
-                <a style="display: inline-block" href="#"><span class="mif-tools fg-gray"></span></a>
+
+
+            <span class="bold">Agent:</span>
+            <div class="list-large-text">Human</div>
+
+
+            <div style="padding-top: 15px;">
+                <span style="display: inline!important;" class="bold">Space</span>
+                <span> 1.0 </span>
             </div>
-            <div>Particles: 5, Non-particles: 3</div>
+
+
+            <div style="padding-top: 15px;">
+                <a style="display: inline-block" href="#">
+                    <span style="display: inline!important;" class="list-title bold">Interactions</span>
+                    <span class="mif-tools"></span>
+                </a>
+                <div>Particles: 5, Non-particles: 3</div>
+            </div>
+
 
         </div>
     </div>
 
-    <div class="list">
-        <div class="list-content">
-            <span class="list-title">
-                Agent:
-            </span>
-            <div class="list-large-text">Oxygen</div>
-        </div>
-    </div>
-
-    <div class="list">
-        <div class="list-content">
-            <span class="list-title">
-                Agent:
-            </span>
-            <div class="list-large-text">Carbon Dioxide</div>
-        </div>
-    </div>
 </div>
