@@ -3,16 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="51d9e12a-dbe2-4943-8511-5a939b89cc48" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/app.js" afterPath="$PROJECT_DIR$/app/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/experiment.js" afterPath="$PROJECT_DIR$/app/js/experiment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/system_editor/agent_list.html" afterPath="$PROJECT_DIR$/app/system_editor/agent_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/system_editor/particle_list.html" afterPath="$PROJECT_DIR$/app/system_editor/particle_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/system_editor/system_editor.html" afterPath="$PROJECT_DIR$/app/system_editor/system_editor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/system_editor/system_info.html" afterPath="$PROJECT_DIR$/app/system_editor/system_info.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/system_editor/system_list.html" afterPath="$PROJECT_DIR$/app/system_editor/system_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/template/hover_input.html" afterPath="$PROJECT_DIR$/app/template/hover_input.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/app.css" afterPath="$PROJECT_DIR$/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -529,7 +519,7 @@
       <workItem from="1484332714036" duration="14083000" />
       <workItem from="1484397101231" duration="3749000" />
       <workItem from="1484406355782" duration="4038000" />
-      <workItem from="1484496847568" duration="7075000" />
+      <workItem from="1484496847568" duration="7116000" />
     </task>
     <task id="LOCAL-00001" summary="Rework with Angular&#10;">
       <created>1484242099363</created>
@@ -545,17 +535,24 @@
       <option name="project" value="LOCAL" />
       <updated>1484406420499</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Template almost done">
+      <created>1484519298783</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1484519298783</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86189000" />
+    <option name="totallyTimeSpent" value="86230000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910052" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
