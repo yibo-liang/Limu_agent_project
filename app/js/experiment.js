@@ -5,7 +5,7 @@
 
 var particles=[];
 particles.push(new_particle("H2O"));
-particles.push(new_particle("C02"));
+particles.push(new_particle("CO2"));
 particles.push(new_particle("O2"));
 
 

@@ -42,3 +42,7 @@
     font-size:10px;
     font-weight: 400;
 }
+
+.hide{
+    opacity: 0;
+}

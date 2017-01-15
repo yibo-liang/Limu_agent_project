@@ -6,36 +6,44 @@
             </div>
         </a>
     </div>
-    <div class="list" style="padding-top: 10px; padding-bottom: 10px" ng-repeat="i in system.agent_description">
+</div>
+<div class="listview-outlook" style=" max-height: 450px; overflow-y: auto">
+    <div class="list" style="padding-top: 10px; padding-bottom: 10px;" ng-repeat="i in system.agent_descriptions">
         <div class="list-content">
 
 
             <div style="position: relative">
                 <div style="display: block; right:10px; position: absolute; padding: 0 10px 0 0">
-                    <div class="label-small">Amount</div>
-                    <a style="display: inline-block" href="#"><span class="mif-minus fg-gray"></span></a>
-                    <div class="bold" style="font-size: 32px; display: inline-block">32</div>
-                    <a style="display: inline-block" href="#"><span class="mif-plus fg-gray"></span></a>
+                    <!--<div class="label-small">Amount</div>-->
+                    <!--<a style="display: inline-block" href="#"><span class="mif-minus fg-gray"></span></a>-->
+                    <div class="bold" style="font-size: 32px; display: inline-block">
+                        <hover-input text="system.agent_list[i.name] ?
+                        system.agent_list[i.name] : 0" font-size="'42px'"></hover-input>
+                    </div>
+                    <!--<a style="display: inline-block" href="#"><span class="mif-plus fg-gray"></span></a>-->
                 </div>
             </div>
 
 
-            <span class="bold">Agent:</span>
-            <div class="list-large-text">Human</div>
+            <!--<span class="bold">Agent:</span>-->
+            <div class="list-large-text">{{i.name}}</div>
 
 
             <div style="padding-top: 15px;">
                 <span style="display: inline!important;" class="bold">Space</span>
-                <span> 1.0 </span>
+                <span> {{i.space}} </span>
             </div>
 
 
-            <div style="padding-top: 15px;">
-                <a style="display: inline-block" href="#">
+            <div style="padding-top: 15px;" ng-mouseover="hover_interact[i.name]=true" ng-mouseleave="hover_interact[i.name]=false">
+                <a style="display: inline-block;" href="#" ng-style="{color: hover_interact[i.name]==true?'#2086bf':'grey'}">
                     <span style="display: inline!important;" class="list-title bold">Interactions</span>
-                    <span class="mif-tools"></span>
+                    <span class="mif-tools" ng-if="hover_interact[i.name]==true"></span>
+                    <div style="padding-left: 15px; font-size: 12px;">Particles: {{i.particle_interaction.length}},<br/>
+                        Non-particles: {{i.non_particle_interaction.length}}<br/>
+                        Passive: {{i.passive_interaction.length}}
+                    </div>
                 </a>
-                <div>Particles: 5, Non-particles: 3</div>
             </div>
 
 

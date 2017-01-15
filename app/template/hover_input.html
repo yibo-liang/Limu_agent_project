@@ -1,8 +1,12 @@
-<div style="position:relative; display: block" ng-mouseleave="mouseleave()" ng-style="container_style">
-    <div class="hover-input-text" style="position: absolute; display: block!important; margin: 4px 0 2px 0 !important;" ng-show="hover"  ng-mouseover="mouseover()" >
+<div style="position:relative; display: inline-block" ng-mouseleave="mouseleave()" ng-style="container_style">
+    <div class="hover-input-text"
+         ng-class="{hide : hover}"
+         style="position: absolute; display: block!important; margin: 3px 1px 3px 0 !important;"
+         ng-mouseover="mouseover()"
+         ng-style="{'font-size':fontSize, 'color': color, 'font-weight': fontWeight}">
         {{dtext}}
     </div>
-    <div style="position: absolute;" ng-show="hover" >
-        <input class="hover-input-textbox" ng-model="dtext" ng-style="style"  ng-focus="focus()" ng-change="match()" >
+    <div style="position: absolute;" ng-show="hover">
+        <input class="hover-input-textbox" ng-model="dtext" ng-style="style"  ng-change="change()">
     </div>
 </div>
