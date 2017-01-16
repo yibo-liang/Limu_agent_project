@@ -25,9 +25,9 @@
     init_display_agents(sys1, displays.agent_view);
     function render() {
         update_display_agents(sys1, displays.agent_view);
-        render_display_agents(sys1, displays.agent_view)
-        random_move_agent_display(sys1, displays.agent_view)
-        step(sys1)
+        render_display_agents(sys1, displays.agent_view);
+        random_move_agent_display(sys1, displays.agent_view);
+        step(sys1);
         setTimeout(render, 1000)
 
     }

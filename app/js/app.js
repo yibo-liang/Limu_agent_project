@@ -15,43 +15,43 @@ app.directive("systemDisplay", ["$rootScope", "$timeout", function ($rootScope, 
 
         scope.system = null;
         scope.show = false;
-        scope.$on("SYS_DISPLAY", function  (event, arg) {
+        scope.$on("SYS_DISPLAY", function (event, arg) {
             console.log(arg);
             scope.system = arg;
             scope.show = true;
 
-            $timeout(function(){
+            $timeout(function () {
 
                 init_display_agents(scope.system, displays.agent_view);
                 scope.visualise();
             });
-        })
+        });
 
         scope.render = function () {
             update_display_agents(scope.system, displays.agent_view);
             render_display_agents(scope.system, displays.agent_view);
             random_move_agent_display(scope.system, displays.agent_view);
-        }
+        };
 
         scope.step = function () {
             step(scope.system);
-        }
+        };
 
         scope.autostepping = true;
         scope.start_stepping = function () {
             scope.autostepping = true;
-        }
+        };
         scope.pause_stepping = function () {
             scope.autostepping = false;
-        }
+        };
         scope.hide = function () {
             scope.show = false;
-        }
+        };
 
-        scope.visualise=function(){
+        scope.visualise = function () {
             scope.render();
             scope.step();
-            if(scope.show){
+            if (scope.show) {
                 $timeout(scope.visualise, 1000);
             }
         }
@@ -62,7 +62,7 @@ app.directive("systemDisplay", ["$rootScope", "$timeout", function ($rootScope, 
         templateUrl: "app/system_display/system_display.html",
         link: link
     }
-}])
+}]);
 
 app.directive("systemEditor", [function () {
     return {
@@ -80,13 +80,13 @@ app.directive("systemList", ["$rootScope", function ($rootScope) {
             sys.name = "system" + scope.new_sys_count;
             scope.new_sys_count++;
             scope.systems.push(sys);
-        }
+        };
 
         scope.select = function (d) {
             $rootScope.$broadcast("SELECT_SYS", d);
-        }
+        };
 
-        scope.display=function(d){
+        scope.display = function (d) {
             $rootScope.$broadcast("SYS_DISPLAY", copy(d));
         }
     }
@@ -116,17 +116,24 @@ app.directive("systemInfo", [function () {
     }
 }]);
 
-app.directive("agentList", [function () {
+app.directive("agentList", ["$rootScope", "$timeout", function ($rootScope, $timeout) {
     function link(scope, element, attrs) {
         scope.add_new_agent = function () {
             var new_agent = new_agent_description(makeid(6), 1, 0, [], [], []);
             scope.system.agent_descriptions.push(new_agent);
             scope.system.agent_list[new_agent.name] = 0;
-        }
+        };
         scope.change_agent_name = function (callback_arg) {
             var oldname = callback_arg.old;
             var newname = callback_arg.new;
             change_agent_name(scope.system, oldname, newname);
+        };
+        scope.edit_interaction = function (agent) {
+
+            $rootScope.$broadcast("EDIT_INTERACTION", {system: scope.system, agent: agent});
+            $timeout(function () {
+                metroDialog.open('#interaction_dialog');
+            })
         }
     }
 
@@ -140,10 +147,45 @@ app.directive("agentList", [function () {
     }
 }]);
 
-app.directive("agentInfo", [function () {
+app.directive("interactions", [function () {
+
+    function link(scope, element, attrs) {
+
+        scope.display = function () {
+
+            if (scope.agent.particle_interaction.length == 0) {
+                for (var i = 0; i < scope.system.particle_descriptions; i++) {
+                    var p = scope.system.particle_descriptions[i];
+                    scope.particle_interaction.push(particle_interaction(p.name, 0));
+                }
+
+            } else {
+                scope.particle_interaction = copy(scope.agent.particle_interaction);
+            }
+            if (scope.agent.non_particle_interaction.length > 0) {
+                scope.non_particle_interaction = copy(scope.agent.non_particle_interaction);
+            }
+            if (scope.agent.passive_interaction.length > 0) {
+                scope.passive_interaction = copy(scope.agent.passive_interaction);
+            }
+            console.log(scope.agent.non_particle_interaction)
+        };
+
+        scope.$on("EDIT_INTERACTION", function (elem, args) {
+            scope.particle_interaction = [];
+            scope.non_particle_interaction = [];
+            scope.passive_interaction = [];
+            console.log(args);
+            scope.agent = args.agent;
+            scope.system = args.system;
+            scope.display();
+        })
+    }
+
     return {
         restrict: "E",
-        templateUrl: "app/system_editor/agent_info.html"
+        templateUrl: "app/system_editor/interactions.html",
+        link: link
     }
 }]);
 
@@ -153,7 +195,7 @@ app.directive("particleList", [function () {
             var np = new_particle();
             scope.system.particle_descriptions.push(np);
             scope.system.particle_list[np.name] = 0;
-        }
+        };
         scope.change_particle_name = function (callback_args) {
             var oldname = callback_args.old;
             var newname = callback_args.new;
@@ -205,7 +247,7 @@ app.directive("hoverInput", ["$timeout", function ($timeout) {
                 "font-weight": scope.fontWeight,
                 "background-color": "rgba(255,255,255,0)",
                 "white-space": "nowrap",
-            }
+            };
             scope.style["width"] = scope.textDOM.offsetWidth + 0 + "px";
             scope.style["height"] = scope.textDOM.offsetHeight + 0 + "px";
 
@@ -219,7 +261,7 @@ app.directive("hoverInput", ["$timeout", function ($timeout) {
 
         $timeout(function () {
             scope.dtext = scope.text;
-            console.log(scope.text)
+            console.log(scope.text);
             if (typeof scope.color === "undefined") {
                 scope.color = "#101010";
             }
@@ -235,29 +277,29 @@ app.directive("hoverInput", ["$timeout", function ($timeout) {
                 match_container_size();
             })
 
-        })
+        });
         scope.change = function () {
             $timeout(function () {
                 match_size();
             })
 
-        }
+        };
 
         scope.match = match_size;
 
         scope.focus = function () {
             match_size();
 
-        }
+        };
         scope.mouseover = function () {
             match_size();
             scope.hover = true;
             $timeout(function () {
 
                 scope.inputDOM.focus();
-            })
+            });
             console.log("mousover")
-        }
+        };
         scope.mouseleave = function () {
             scope.hover = false;
             var temp = scope.text;

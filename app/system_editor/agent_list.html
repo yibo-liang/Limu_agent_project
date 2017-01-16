@@ -8,7 +8,8 @@
     </div>
 </div>
 <div class="listview-outlook" style=" max-height: 450px; overflow-y: auto">
-    <div class="list" style="padding-top: 10px; padding-bottom: 10px; text-align: left" ng-repeat="i in system.agent_descriptions">
+    <div class="list" style="padding-top: 10px; padding-bottom: 10px; text-align: left"
+         ng-repeat="i in system.agent_descriptions">
         <div class="list-content">
 
 
@@ -27,7 +28,7 @@
 
             <!--<span class="bold">Agent:</span>-->
             <div class="list-large-text">
-                <hover-input text="i.name" font-size="'26px'" ></hover-input>
+                <hover-input text="i.name" font-size="'26px'"></hover-input>
             </div>
 
 
@@ -39,19 +40,25 @@
             </div>
 
 
-            <div style="padding-top: 15px;" ng-mouseover="hover_interact[i.name]=true" ng-mouseleave="hover_interact[i.name]=false">
-                <a style="display: inline-block;" href="#" ng-style="{color: hover_interact[i.name]==true?'#2086bf':'grey'}">
+            <div style="padding-top: 15px;" ng-mouseover="hover_interact[i.name]=true"
+                 ng-mouseleave="hover_interact[i.name]=false">
+                <div class="alink" style="display: inline-block;" href="#" ng-click="edit_interaction(i)">
                     <span style="display: inline!important;" class="list-title bold">Interactions</span>
                     <span class="mif-tools" ng-if="hover_interact[i.name]==true"></span>
                     <div style="padding-left: 15px; font-size: 12px;">Particles: {{i.particle_interaction.length}},<br/>
                         Non-particles: {{i.non_particle_interaction.length}}<br/>
                         Passive: {{i.passive_interaction.length}}
                     </div>
-                </a>
+                </div>
             </div>
 
 
         </div>
     </div>
 
+</div>
+
+<div data-role="dialog" id="interaction_dialog" data-overlay="true" data-overlay-color="op-dark"
+     style="width: 500px; height: 600px" data-close-button="true">
+    <interactions></interactions>
 </div>

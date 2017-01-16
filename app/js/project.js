@@ -76,6 +76,11 @@ function new_system() {
     }
 }
 
+//
+// function copy(system) {
+//     var res = jQuery.extend(true, {}, system);
+//     return res;
+// }
 function copy(system) {
     return JSON.parse(JSON.stringify(system))
 }
@@ -199,7 +204,8 @@ function interact(agent, system) {
     system.agent_list[agent.name] = n;
     console.log("set " + agent.name + " n = ", n);
     console.log(agent.name, n);
-    console.log("---")
+    console.log("---");
+    ;
     for (var i = 0; i < agent.particle_interaction.length; i++) {
         var p = agent.particle_interaction[i];
         var interaction_amount = n * p.amount;
@@ -296,11 +302,13 @@ function update_display_agents(system, container) {
 
     var sigmoid = function (x) {
         return 1 / (1 + Math.exp(-x * 1));
-    }
+    };
+
 
     var logx = function (x) {
         return Math.log(x) / Math.log(10);
-    }
+    };
+
     for (agent_name in system.agent_list) {
         var num = system.agent_list[agent_name];
 
@@ -354,7 +362,8 @@ var stringToColour = function (str) {
         colour += ('00' + value.toString(16)).substr(-2);
     }
     return colour;
-}
+};
+;
 
 function render_display_agents(system, container) {
     var interval = 1000;
@@ -369,7 +378,8 @@ function render_display_agents(system, container) {
         .selectAll("circle")
         .data(data, function (d) {
             return d.agent + d.id; // name + number to distinguish
-        })
+        });
+    ;
 
     var circles = select.enter().append("circle");
 
@@ -416,7 +426,8 @@ function render_display_agents(system, container) {
         })
         .style("fill", function (d) {
             return stringToColour(d.agent);
-        })
+        });
+    ;
 
     select.exit().transition()
         .ease(transition_method)

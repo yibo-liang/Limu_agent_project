@@ -1,0 +1,95 @@
+<div style="width: 600px; height: 600px; position: relative">
+    <h3 style="padding :10px">Interactions of Agent : {{agent.name}}</h3>
+    <div class="h-divider"></div>
+    <div style="width: 100%; height: calc(100% - 11px); overflow-y: auto">
+
+        <div class="listview-outlook">
+            <div class="list-group" style="font-size: 20px ;">
+                <span class="list-group-toggle">
+                    Particle Interactions
+                </span>
+                <div class="list-group-content">
+                    <div class="list"  style="padding-left: 32px;">
+
+                        <div class="grid">
+                            <div class="row cells3" ng-repeat="i in particle_interaction">
+                                <div class="cell colspan2">
+                                    {{i.name}}
+                                </div>
+                                <div class="cell">
+                                    <hover-input text="i.amount" font-size="'20px'"></hover-input>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="cell alink">
+                                    Add Particle Interaction ...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-group" style="font-size: 20px ;">
+                <span class="list-group-toggle">
+                    Non Particle Interactions
+                </span>
+                <div class="list-group-content">
+                    <div class="list" ng-repeat="i in non_particle_interaction" style="padding-left: 32px;">
+                        <div class="grid">
+                            <div class="row cells7">
+                                <div class="cell colspan2" style="vertical-align: baseline;">
+                                    "{{i.name}}"
+                                </div>
+                                <div class="cell " style="vertical-align: baseline;">
+                                    from
+                                </div>
+                                <div class="cell colspan4">
+                                    <div ng-repeat="(agent_name, amount) in i.choice" style="vertical-align: text-bottom;padding: 4px;display: inline; border-width: 1px; border-style: dashed; border-color: #d7d7d7">
+                                        {{agent_name}} {{amount}}
+                                    </div>
+                                    <button class="button" style="vertical-align: baseline;display: inline; font-size: 20px; padding: 4px; margin: 0 0 0 5px; height: 37px">More..</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-group" style="font-size: 20px ;">
+                  <span class="list-group-toggle">
+                    Passive Interactions (For Reference in Genetic Algorithm)
+                </span>
+                <div class="list-group-content">
+                    <div class="list" style="padding-left: 32px;">
+                        <table class="table">
+                            <thead ng-if="passive_interaction.length>0">
+                            <tr>
+                                <th class="">Regarded As</th>
+                                <th class="">By</th>
+                                <th class="">Quantity</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="i in passive_interaction" style="font-size: 24px;">
+                                <td style="padding: 5px">{{i.asTarget}}</td>
+                                <td>{{i.by}}</td>
+                                <td>{{i.amount}}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="button"> Add New Passive Interaction</button>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="button" style="position: absolute; top: 101%">Save Interaction</button>
+    <button class="button" style="position: absolute; top: 101%; left: 150px"
+            onclick="metroDialog.close('#interaction_dialog')">Cancel
+    </button>
+</div>
