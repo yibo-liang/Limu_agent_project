@@ -1,7 +1,7 @@
-<div class="cell" style="width: 190px; height: 100vh;">
+<div class="cell" style="width: 280px; height: 100vh">
 
     <div style="padding:5px; display: inline-block; font-size: 30px">Systems</div>
-    <div class="listview-outlook" style="position: relative;width: 180px">
+    <div class="listview-outlook" style="position: relative;width: 280px">
         <div class="list">
             <a href="#">
                 <div style="padding: 15px" ng-click="add_system()">
@@ -11,9 +11,18 @@
             </a>
         </div>
     </div>
-    <div class="listview-outlook" style="position: relative; width: 180px" >
-        <div class="list" ng-repeat="i in systems" ng-click="select(i)" style="padding: 10px 0 10px 10px">
+    <div class="listview-outlook" style="position: relative; width: 280px">
+        <div class="list" ng-repeat="i in systems"
+             style="padding: 10px 0 10px 10px; text-align: left;position: relative">
 
+            <div class="toolbar" style="position: absolute; right: 10px; top 20px;">
+                <button class="toolbar-button" ng-click="select(i)">
+                    <span class="mif-info"></span>
+                </button>
+                <button class="toolbar-button" ng-click="display(i)">
+                    <span class="mif-eye"></span>
+                </button>
+            </div>
             <img src="image/gene.png" class="list-icon" style="width: 32px">
             {{i.name}}
         </div>
