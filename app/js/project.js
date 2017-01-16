@@ -2,12 +2,11 @@
  * Created by Devid on 31/12/2016.
  */
 
-function makeid(n)
-{
+function makeid(n) {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-    for( var i=0; i < n; i++ )
+    for (var i = 0; i < n; i++)
         text += possible.charAt(Math.floor(Math.random() * possible.length));
 
     return text;
@@ -17,7 +16,7 @@ function new_particle(name, growth) {
     if (typeof name === "undefined") {
         name = makeid(6);
     }
-    if (typeof growth=== "undefined") {
+    if (typeof growth === "undefined") {
         growth = 0;
     }
     return {
@@ -77,6 +76,51 @@ function new_system() {
     }
 }
 
+function change_agent_name(system, oldname, newname) {
+    var count = system.agent_list[oldname];
+    delete system.agent_list[oldname];
+    system.agent_list[newname] = count;
+    for (var i = 0; i < system.agent_descriptions.length; i++) {
+        var desc = system.agent_descriptions[i];
+        if (desc.name === oldname) {
+            desc.name = newname;
+        }
+        for (var j = 0; j < desc.non_particle_interaction.length; j++) {
+            var npi = desc.non_particle_interaction[j];
+            var new_choice = {};
+            for (agent in npi.choice) {
+                if (agent === oldname) {
+                    new_choice[newname] = npi.choice[oldname];
+                } else {
+                    new_choice[agent] = npi.choice[agent];
+                }
+            }
+            npi.choic = new_choice;
+        }
+        for (var j=0;j<desc.passive_interaction.length;j++){
+            var pi=desc.passive_interaction[j];
+            if (pi.by==oldname){
+                pi.by=newname;
+            }
+        }
+    }
+}
+
+function change_particle_name(system, oldname, newname) {
+    var count = system.particle_list[oldname];
+    delete system.particle_list[oldname];
+    system.particle_list[newname]=count;
+    for (var i=0;i<system.agent_descriptions.length;i++){
+        var desc=system.agent_descriptions[i];
+        for (var j=0;j<desc.particle_interaction.length;j++){
+            var p=desc.particle_interaction[j];
+            if (p.name==oldname){
+                p.name=newname;
+            }
+        }
+    }
+}
+
 //get maximum amount of interaction of an agent
 function get_interact_maximum(agent, system) {
     console.log("get interact max", agent.name);
@@ -87,7 +131,7 @@ function get_interact_maximum(agent, system) {
     // amount of agent in the system,
     //for each particle this agent interacts, calculate the maximum interaction amount
     var max = expect_agent_num;
-   // console.log(1, max)
+    // console.log(1, max)
     for (var i = 0; i < agent.particle_interaction.length; i++) {
         var p = agent.particle_interaction[i];
         var expect_particle_interaction = max * p.amount;
@@ -102,7 +146,7 @@ function get_interact_maximum(agent, system) {
             }
         }
     }
-   // console.log(2, max)
+    // console.log(2, max)
     // 2. calculate non particle interaction, if not non particle condition, reduce the excess amount of agent
     //for each non particle interaction
     for (var i = 0; i < agent.non_particle_interaction.length; i++) {
@@ -121,7 +165,7 @@ function get_interact_maximum(agent, system) {
         }
     }
 
-  //  console.log(3, max)
+    //  console.log(3, max)
     // 3. calculate space, reduce the excess amount of agent
     var total_space = system.space;
     var remaining_space = total_space;
@@ -138,7 +182,7 @@ function get_interact_maximum(agent, system) {
     if (expect_remaining_space < 0) {
         max = Math.floor(remaining_space / agent.space);
     }
-   // console.log(4, max)
+    // console.log(4, max)
     return max;
 
 }
@@ -175,7 +219,7 @@ function step(system) {
 }
 
 function random_xy(x, y, r) {
-    var l = Math.random()*10;
+    var l = Math.random() * 10;
     var dr = r + 1;
     while (dr > r) {
 
@@ -213,22 +257,22 @@ function init_display_agents(system, container) {
 
 function update_display_agents(system, container) {
     var d_agents = [];
-    var temp_dict={};
+    var temp_dict = {};
 
-    for (var i=0;i<system.agent_display.length;i++){
-        var d=system.agent_display[i];
-        var name=d.agent;
-        if (typeof temp_dict[name]==="undefined"){
-            temp_dict[name]={};
+    for (var i = 0; i < system.agent_display.length; i++) {
+        var d = system.agent_display[i];
+        var name = d.agent;
+        if (typeof temp_dict[name] === "undefined") {
+            temp_dict[name] = {};
         }
-        temp_dict[name][d.id]=d;
+        temp_dict[name][d.id] = d;
     }
 
     for (agent_name in system.agent_list) {
         var num = system.agent_list[agent_name];
 
         for (var i = 0; i < num; i++) {
-            if (typeof temp_dict[agent_name][i]!=="undefined"){
+            if (typeof temp_dict[agent_name][i] !== "undefined") {
                 d_agents.push(temp_dict[agent_name][i]);
 
 
@@ -277,8 +321,8 @@ var stringToColour = function (str) {
 }
 
 function render_display_agents(system, container) {
-    var interval=1000;
-    var transition_method=d3.easeLinear;
+    var interval = 1000;
+    var transition_method = d3.easeLinear;
 
 
     var data = system.agent_display;
@@ -294,8 +338,7 @@ function render_display_agents(system, container) {
     var circles = select.enter().append("circle");
 
 
-
-    var circle_enter=circles
+    var circle_enter = circles
         .attr("cx", function (d) {
             return d.x + offset;
         })
@@ -340,7 +383,7 @@ function render_display_agents(system, container) {
     select.exit().transition()
         .ease(transition_method)
         .duration(interval)
-        .attr("fill-opacity",0)
+        .attr("fill-opacity", 0)
         .remove();
 }
 

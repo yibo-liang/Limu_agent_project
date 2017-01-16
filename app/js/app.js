@@ -9,7 +9,43 @@ var app = angular.module('myApp', []);
 
 
 //directives
+app.directive("systemDisplay", ["$rootScope", function ($rootScope) {
+    function link(scope, element, attrs) {
+        scope.system = null;
+        scope.show=false;
+        scope.on("SYS_DISPLAY", function (system) {
+            scope.system = system;
+            scope.show=true;
+        })
 
+        scope.render = function () {
+            update_display_agents(scope.system, displays.agent_view);
+            render_display_agents(scope.system, displays.agent_view)
+            random_move_agent_display(scope.system, displays.agent_view)
+        }
+
+        scope.step=function(){
+            step(scope.system);
+        }
+
+        scope.autostepping=true;
+        scope.start_stepping=function(){
+            scope.autostepping=true;
+        }
+        scope.pause_stepping=function(){
+            scope.autostepping=false;
+        }
+        scope.hide=function(){
+            scope.show=false;
+        }
+    }
+
+    return {
+        restrict: "E",
+        templateUrl: "app/system_display/system_display.html"
+        link: link
+    }
+}])
 
 app.directive("systemEditor", [function () {
     return {
@@ -24,7 +60,6 @@ app.directive("systemList", ["$rootScope", function ($rootScope) {
         scope.systems = [sys1];
         scope.add_system = function () {
             var sys = new_system();
-            console.log(scope.systems)
             sys.name = "system" + scope.new_sys_count;
             scope.new_sys_count++;
             scope.systems.push(sys);
@@ -50,7 +85,6 @@ app.directive("systemInfo", [function () {
         scope._system = null;
         scope.$on("SELECT_SYS", function (event, arg) {
             scope._system = arg;
-            console.log(scope._system.name);
         })
     }
 
@@ -64,7 +98,14 @@ app.directive("systemInfo", [function () {
 app.directive("agentList", [function () {
     function link(scope, element, attrs) {
         scope.add_new_agent = function () {
-
+            var new_agent = new_agent_description(makeid(6), 1, 0, [], [], []);
+            scope.system.agent_descriptions.push(new_agent);
+            scope.system.agent_list[new_agent.name] = 0;
+        }
+        scope.change_agent_name = function (callback_arg) {
+            var oldname = callback_arg.old;
+            var newname = callback_arg.new;
+            change_agent_name(scope.system, oldname, newname);
         }
     }
 
@@ -91,6 +132,11 @@ app.directive("particleList", [function () {
             var np = new_particle();
             scope.system.particle_descriptions.push(np);
             scope.system.particle_list[np.name] = 0;
+        }
+        scope.change_particle_name = function (callback_args) {
+            var oldname = callback_args.old;
+            var newname = callback_args.new;
+            change_particle_name(scope.system, oldname, newname);
         }
     }
 
@@ -170,7 +216,7 @@ app.directive("hoverInput", ["$timeout", function ($timeout) {
 
         })
         scope.change = function () {
-            $timeout(function(){
+            $timeout(function () {
                 match_size();
             })
 
@@ -212,7 +258,7 @@ app.directive("hoverInput", ["$timeout", function ($timeout) {
             fontSize: "=",
             color: "=",
             fontFamily: "=",
-            fontWeight:"=",
+            fontWeight: "=",
             isNumber: "="
         },
         restrict: "E",
