@@ -76,7 +76,7 @@ function new_system() {
     }
 }
 
-function copy(system){
+function copy(system) {
     return JSON.parse(JSON.stringify(system))
 }
 
@@ -127,7 +127,7 @@ function change_particle_name(system, oldname, newname) {
 
 //get maximum amount of interaction of an agent
 function get_interact_maximum(agent, system) {
-   // console.log("get interact max", agent.name);
+    // console.log("get interact max", agent.name);
     // 0. increase the amount of agents by its natural growth rate
     var current_agent_num = system.agent_list[agent.name];
     var expect_agent_num = (1 + agent.growth) * current_agent_num; // add growth rate
@@ -135,7 +135,7 @@ function get_interact_maximum(agent, system) {
     // amount of agent in the system,
     //for each particle this agent interacts, calculate the maximum interaction amount
     var max = expect_agent_num;
-     //console.log(1, max)
+    //console.log(1, max)
     for (var i = 0; i < agent.particle_interaction.length; i++) {
         var p = agent.particle_interaction[i];
         var expect_particle_interaction = max * p.amount;
@@ -150,7 +150,7 @@ function get_interact_maximum(agent, system) {
             }
         }
     }
-     //console.log(2, max)
+    //console.log(2, max)
     // 2. calculate non particle interaction, if not non particle condition, reduce the excess amount of agent
     //for each non particle interaction
     for (var i = 0; i < agent.non_particle_interaction.length; i++) {
@@ -169,7 +169,7 @@ function get_interact_maximum(agent, system) {
         }
     }
 
-      //console.log(3, max)
+    //console.log(3, max)
     // 3. calculate space, reduce the excess amount of agent
     var total_space = system.space;
     var remaining_space = total_space;
@@ -180,15 +180,15 @@ function get_interact_maximum(agent, system) {
             var agent_space = system.agent_list[agent_desc.name] * agent_desc.space;
 
             remaining_space -= agent_space;
-            console.log(remaining_space, "- "+agent_desc.name, system.agent_list[agent_desc.name], agent_space)
+            console.log(remaining_space, "- " + agent_desc.name, system.agent_list[agent_desc.name], agent_space)
         }
     }
-    console.log("rs", remaining_space, "occ", max*agent.space);
+    console.log("rs", remaining_space, "occ", max * agent.space);
     var expect_remaining_space = remaining_space - max * agent.space;
     if (expect_remaining_space < 0) {
         max = Math.floor(remaining_space / agent.space);
     }
-     //console.log(4, max)
+    //console.log(4, max)
     return max;
 
 }
@@ -197,7 +197,7 @@ function interact(agent, system) {
     var n = get_interact_maximum(agent, system);
     //interact particles
     system.agent_list[agent.name] = n;
-    console.log("set "+agent.name+" n = ", n);
+    console.log("set " + agent.name + " n = ", n);
     console.log(agent.name, n);
     console.log("---")
     for (var i = 0; i < agent.particle_interaction.length; i++) {
@@ -216,7 +216,6 @@ function interact(agent, system) {
     }
 
 }
-
 
 
 function step(system) {
@@ -299,14 +298,15 @@ function update_display_agents(system, container) {
         return 1 / (1 + Math.exp(-x * 1));
     }
 
-    var log100=function(x){
-        return Math.log(x)/Math.log(50);
+    var logx = function (x) {
+        return Math.log(x) / Math.log(10);
     }
     for (agent_name in system.agent_list) {
         var num = system.agent_list[agent_name];
 
         for (var i = 0; i < num; i++) {
             if (typeof temp_dict[agent_name][i] !== "undefined") {
+                temp_dict[agent_name][i].display_r = 2 + (1 - sigmoid(logx(num))) * 30;
                 d_agents.push(temp_dict[agent_name][i]);
 
 
@@ -322,7 +322,7 @@ function update_display_agents(system, container) {
                 id: i,
                 x: x,
                 y: y,
-                display_r: 2 + (1 - sigmoid(log100(num))) * 15
+                display_r: 2 + (1 - sigmoid(logx(num))) * 30
             })
         }
     }
