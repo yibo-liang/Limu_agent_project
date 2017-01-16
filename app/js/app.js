@@ -20,29 +20,29 @@ app.directive("systemDisplay", ["$rootScope", function ($rootScope) {
 
         scope.render = function () {
             update_display_agents(scope.system, displays.agent_view);
-            render_display_agents(scope.system, displays.agent_view)
-            random_move_agent_display(scope.system, displays.agent_view)
+            render_display_agents(scope.system, displays.agent_view);
+            random_move_agent_display(scope.system, displays.agent_view);
         }
 
         scope.step=function(){
             step(scope.system);
-        }
+        };
 
         scope.autostepping=true;
         scope.start_stepping=function(){
             scope.autostepping=true;
-        }
+        };
         scope.pause_stepping=function(){
             scope.autostepping=false;
-        }
+        };
         scope.hide=function(){
             scope.show=false;
-        }
+        };
     }
 
     return {
         restrict: "E",
-        templateUrl: "app/system_display/system_display.html"
+        templateUrl: "app/system_display/system_display.html",
         link: link
     }
 }])
