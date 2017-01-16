@@ -1,17 +1,18 @@
 <div ng-if="_system!==null">
     <div style="width: 960px; height: 100vh; ">
         <div class="grid col-div-container" style="height: 600px;">
-            <div class="col-div" style="left: 0;"></div>
-            <div class="col-div" style="left: 33.3%;"></div>
-            <div class="col-div" style="left: 66.6%;"></div>
-            <div class="col-div" style="left: 100%;"></div>
+            <div class="col-div" style="left: 0;" ng-if="show_general==true"></div>
+            <div class="col-div" style="left: 33.3%;" ng-if="show_general==true || show_particles==true "></div>
+            <div class="col-div" style="left: 66.6%;" ng-if="show_agents==true || show_particles==true "></div>
+            <div class="col-div" style="left: 100%;" ng-if="show_agents==true"></div>
 
             <div class="row cells3">
                 <div class="cell padded">
-                    <h3 class="header" style="text-align: center"> General Information</h3>
+                    <h3 class="header alink" style="text-align: center" ng-click="show_general=!show_general"> General
+                        Information</h3>
                     <div class="h-divider"></div>
 
-                    <div class="listview-outlook">
+                    <div ng-if="show_general==true" class="listview-outlook">
                         <div class="list">
                             <div class="list-content">
                                 <span class="list-title">
@@ -37,7 +38,8 @@
                                 <span class="list-title">
                                 Particles:
                                 </span>
-                                <div style="text-align: center; font-size: 24px;">{{_system.particle_descriptions.length}}
+                                <div style="text-align: center; font-size: 24px;">
+                                    {{_system.particle_descriptions.length}}
                                     <span style="font-size: 16px">types</span>
                                 </div>
                             </div>
@@ -56,15 +58,17 @@
 
                     </div>
                 </div>
-                <div class="cell padded">
-                    <h3 class="header" style="text-align: center"> Particles Information</h3>
+                <div class="cell padded alink">
+                    <h3 class="header" style="text-align: center" ng-click="show_particles=!show_particles"> Particles
+                        Information</h3>
                     <div class="h-divider"></div>
-                    <particle-list system="_system"></particle-list>
+                    <particle-list ng-if="show_particles==true" system="_system"></particle-list>
                 </div>
-                <div class="cell padded">
-                    <h3 class="header" style="text-align: center"> Agents Information</h3>
+                <div class="cell padded alink">
+                    <h3 class="header" style="text-align: center" ng-click="show_agents=!show_agents"> Agents
+                        Information</h3>
                     <div class="h-divider"></div>
-                    <agent-list system="_system"></agent-list>
+                    <agent-list ng-if="show_agents==true" system="_system"></agent-list>
                 </div>
             </div>
         </div>

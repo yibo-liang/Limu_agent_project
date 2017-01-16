@@ -46,3 +46,12 @@
 .hide{
     opacity: 0;
 }
+
+.alink{
+    cursor: pointer;
+
+}
+
+.alink:hover{
+    color: #2086bf
+}
