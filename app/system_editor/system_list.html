@@ -12,10 +12,16 @@
         </div>
     </div>
     <div class="listview-outlook" style="position: relative; width: 180px" >
-        <div class="list" ng-repeat="i in systems" ng-click="select(i)" style="padding: 10px 0 10px 10px">
+        <div class="list" ng-repeat="i in systems" style="padding: 10px 0 10px 10px">
 
             <img src="image/gene.png" class="list-icon" style="width: 32px">
             {{i.name}}
+            <button class="toolbar-button" ng-click="select(i)">
+                <span class="mif-info"></span>
+            </button>
+            <button class="toolbar-button" ng-click="display(i)">
+                <span class="mif-eye"></span>
+            </button>
         </div>
     </div>
 </div>
