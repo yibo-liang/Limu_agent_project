@@ -22,17 +22,17 @@
             <div style="display: inline-block; right:10px; position: absolute; padding: 10px; width: 80px; text-align: center">
                 <!--<a style="display: inline" href="#" ng-if="hover[i.name]===true"><span class="mif-minus fg-gray"></span></a>-->
                 <div>
-                    <hover-input text="system.particle_list[i.name]" font-size="'32px'" font-weight="700"></hover-input>
+                    <hover-input reject-empty="1" text="system.particle_list[i.name]"  font-size="'32px'" font-weight="700"></hover-input>
                 </div>
                 <!--<a style="display: inline" href="#" ng-if="hover[i.name]===true"><span class="mif-plus fg-gray"></span></a>-->
             </div>
 
             <div class="list-large-text">
-                <hover-input text="i.name"></hover-input>
+                <hover-input text="i.name" on-change-callback="change_particle_name" reject-empty="1" ></hover-input>
             </div>
             <div style="padding-top: 10px; color: #cacaca">
                 Growth (per step):
-                <hover-input text="i.growth" font-size="'20px'" color="'#cacaca'"></hover-input>
+                <hover-input  reject-empty="1"  text="i.growth" font-size="'20px'" color="'#cacaca'"></hover-input>
             </div>
 
         </div>

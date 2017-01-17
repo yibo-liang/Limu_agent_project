@@ -18,7 +18,7 @@
                     <!--<div class="label-small">Amount</div>-->
                     <!--<a style="display: inline-block" href="#"><span class="mif-minus fg-gray"></span></a>-->
                     <div class="bold" style="font-size: 32px; display: inline-block">
-                        <hover-input text="system.agent_list[i.name] ?
+                        <hover-input reject-empty="" text="system.agent_list[i.name] ?
                         system.agent_list[i.name] : 0" font-size="'42px'"></hover-input>
                     </div>
                     <!--<a style="display: inline-block" href="#"><span class="mif-plus fg-gray"></span></a>-->
@@ -28,14 +28,14 @@
 
             <!--<span class="bold">Agent:</span>-->
             <div class="list-large-text">
-                <hover-input text="i.name" font-size="'26px'"></hover-input>
+                <hover-input reject-empty="1" text="i.name" font-size="'26px'"></hover-input>
             </div>
 
 
             <div style="padding-top: 15px;">
                 <span style="display: inline!important;" class="bold">Space</span>
                 <span>
-                <hover-input text="i.space" font-size="'16px'"></hover-input>
+                <hover-input reject-empty="1" text="i.space" font-size="'16px'"></hover-input>
                 </span>
             </div>
 
@@ -59,6 +59,6 @@
 </div>
 
 <div data-role="dialog" id="interaction_dialog" data-overlay="true" data-overlay-color="op-dark"
-     style="width: 500px; height: 600px" data-close-button="true">
+     style="width: 500px; height: 600px" data-close-button="false">
     <interactions></interactions>
 </div>

@@ -1,4 +1,4 @@
-<div style="width: 960px; height: 100vh; " ng-show="_system!==null">
+<div style="width: 960px; height: 100vh;" ng-show="_system!==null">
     <div class="grid col-div-container" style="height: 600px; margin: 0">
         <div class="col-div" style="left: 0;" ng-if="show_general==true"></div>
         <div class="col-div" style="left: 33.3%;" ng-if="show_general==true || show_particles==true "></div>
@@ -7,8 +7,8 @@
 
         <div class="row cells3">
             <div class="cell padded">
-                <h3 class="header alink" style="text-align: center" ng-click="show_general=!show_general"> General
-                    Information</h3>
+                <h3 class="header alink" style="text-align: center" ng-click="show_general=!show_general"> general
+                    information</h3>
                 <div class="h-divider"></div>
 
                 <div ng-if="show_general==true" class="listview-outlook">
@@ -18,7 +18,7 @@
                                 Name:
                                 </span>
                             <div style="text-align: center; font-size: 24px;">
-                                <hover-input text="_system.name" font-size="'26px'"></hover-input>
+                                <hover-input text="_system.name" reject-empty="1" font-size="'26px'"></hover-input>
                             </div>
                         </div>
                     </div>
@@ -58,14 +58,14 @@
                 </div>
             </div>
             <div class="cell padded ">
-                <h3 class="header alink" style="text-align: center" ng-click="show_particles=!show_particles"> Particles
-                    Information</h3>
+                <h3 class="header alink" style="text-align: center" ng-click="show_particles=!show_particles"> particles
+                    information</h3>
                 <div class="h-divider"></div>
                 <particle-list ng-if="show_particles==true" system="_system"></particle-list>
             </div>
             <div class="cell padded ">
-                <h3 class="header alink" style="text-align: center" ng-click="show_agents=!show_agents"> Agents
-                    Information</h3>
+                <h3 class="header alink" style="text-align: center" ng-click="show_agents=!show_agents"> agents
+                    information</h3>
                 <div class="h-divider"></div>
                 <agent-list ng-if="show_agents==true" system="_system"></agent-list>
             </div>

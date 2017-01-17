@@ -146,7 +146,7 @@ app.directive("agentList", ["$rootScope", "$timeout", function ($rootScope, $tim
         scope.change_agent_name = function (callback_arg) {
             var oldname = callback_arg.old;
             var newname = callback_arg.new;
-            change_agent_name(scope.system, oldname, newname);
+            return change_agent_name(scope.system, oldname, newname);
         };
         scope.edit_interaction = function (agent) {
 
@@ -211,6 +211,11 @@ app.directive("interactions", [function () {
             scope.system = args.system;
             scope.display();
         })
+
+        scope.close=function(){
+            metroDialog.close('#interaction_dialog');
+
+        }
     }
 
     return {
@@ -230,7 +235,7 @@ app.directive("particleList", [function () {
         scope.change_particle_name = function (callback_args) {
             var oldname = callback_args.old;
             var newname = callback_args.new;
-            change_particle_name(scope.system, oldname, newname);
+            return change_particle_name(scope.system, oldname, newname);
         }
     }
 
@@ -272,6 +277,7 @@ app.directive("hoverInput", ["$timeout", function ($timeout) {
         function match_size() {
             scope.style = {
                 color: scope.color,
+                "min-height": scope.fontSize+"",
                 "font-size": scope.fontSize + "",
                 "border-width": "0",
                 "font-family": "\"Segoe UI\", \"Open Sans\", sans-serif, serif",
@@ -334,12 +340,26 @@ app.directive("hoverInput", ["$timeout", function ($timeout) {
         scope.mouseleave = function () {
             scope.hover = false;
             var temp = scope.text;
-
-            scope.text = scope.dtext;
+            console.log(scope.dtext, scope.rejectEmpty)
             match_container_size();
-
+            if (scope.forceNumber == "int"){
+                scope.dtext=parseInt(scope.dtext);
+            }else if (scope.forceNumber=="float"){
+                scope.dtext=parseFloat(scope.dtext);
+            }
+            if (scope.dtext=="" || scope.text==null){
+                if (scope.rejectEmpty){
+                    scope.dtext=temp;
+                    return;
+                }
+            }
             if (typeof scope.onChangeCallback !== "undefined") {
-                scope.onChangeCallback({old: temp, new: scope.text});
+                var validate=scope.onChangeCallback({old: temp, new: scope.dtext});
+                if (validate){
+                    scope.text = scope.dtext;
+                }
+            }else{
+                scope.text = scope.dtext;
             }
             console.log("mouseleave")
         }
@@ -353,7 +373,9 @@ app.directive("hoverInput", ["$timeout", function ($timeout) {
             color: "=",
             fontFamily: "=",
             fontWeight: "=",
-            isNumber: "="
+            isNumber: "=",
+            rejectEmpty: "=",
+            forceNumber: "="
         },
         restrict: "E",
         templateUrl: "app/template/hover_input.html",
