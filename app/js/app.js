@@ -171,6 +171,17 @@ app.directive("interactions", [function () {
             console.log(scope.agent.non_particle_interaction)
         };
 
+        scope.already_has_pi=function(pi){
+            for (var i=0;i<scope.particle_interaction.length;i++){
+                console.log(scope.particle_interaction[i].name)
+                if (scope.particle_interaction[i].name==pi.name){
+                    return true;
+                }
+            }
+            return false;
+
+        }
+
         scope.$on("EDIT_INTERACTION", function (elem, args) {
             scope.particle_interaction = [];
             scope.non_particle_interaction = [];

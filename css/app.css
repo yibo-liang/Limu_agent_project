@@ -36,6 +36,12 @@
     /* border-bottom-color: #848b8f; */
     outline: none;
     margin-top:1px;
+    min-width: 80px;
+}
+
+.hover-input-text{
+    text-align: left;
+    min-width: 80px;
 }
 
 .label-small{
@@ -54,4 +60,18 @@
 
 .alink:hover{
     color: #2086bf
+}
+
+.alink-lite:hover{
+    background-color: rgba(180,202,236,0.12)!important;
+}
+
+select{
+    border-width: 0;
+    background-color: rgba(255,255,255,0);
+    outline: none;
+}
+
+select:hover{
+    border-bottom-width: 1px;
 }

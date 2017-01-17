@@ -9,23 +9,26 @@
                     Particle Interactions
                 </span>
                 <div class="list-group-content">
-                    <div class="list"  style="padding-left: 32px;">
+                    <div class="list alink-lite" style="padding-left: 32px;" ng-repeat="i in particle_interaction">
 
                         <div class="grid">
-                            <div class="row cells3" ng-repeat="i in particle_interaction">
+                            <div class="row cells3">
                                 <div class="cell colspan2">
-                                    {{i.name}}
+                                    <select ng-model="i.name">
+                                        <option ng-if="!already_has_pi(i) || i.name==x.name" ng-selected="i.name==x.name" ng-repeat="x in system.particle_descriptions" value="{{::x.name}}">{{::x.name}}</option>
+                                    </select>
                                 </div>
                                 <div class="cell">
                                     <hover-input text="i.amount" font-size="'20px'"></hover-input>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="cell alink">
-                                    Add Particle Interaction ...
-                                </div>
-                            </div>
+
                         </div>
+                    </div>
+                    <div class="link alink alink-lite" style="padding: 10px 10px 10px 32px ;"
+                         ng-if="system.particle_descriptions.length>particle_interaction.length">
+                        Add Particle Interaction ...
+
                     </div>
                 </div>
             </div>
@@ -34,23 +37,33 @@
                     Non Particle Interactions
                 </span>
                 <div class="list-group-content">
-                    <div class="list" ng-repeat="i in non_particle_interaction" style="padding-left: 32px;">
+                    <div class="list alink-lite" ng-repeat="i in non_particle_interaction" style="padding-left: 32px;">
                         <div class="grid">
                             <div class="row cells7">
-                                <div class="cell colspan2" style="vertical-align: baseline;">
-                                    "{{i.name}}"
+                                <div class="cell colspan1" style="vertical-align: baseline;">
+                                    {{i.name}}
+                                </div>
+                                <div class="cell colspan1" style="vertical-align: baseline;">
+                                    {{i.amount}}
                                 </div>
                                 <div class="cell " style="vertical-align: baseline;">
                                     from
                                 </div>
                                 <div class="cell colspan4">
-                                    <div ng-repeat="(agent_name, amount) in i.choice" style="vertical-align: text-bottom;padding: 4px;display: inline; border-width: 1px; border-style: dashed; border-color: #d7d7d7">
+                                    <div ng-repeat="(agent_name, amount) in i.choice"
+                                         style="vertical-align: text-bottom;padding: 4px;display: inline; border-width: 1px; border-style: dashed; border-color: #d7d7d7">
                                         {{agent_name}} {{amount}}
                                     </div>
-                                    <button class="button" style="vertical-align: baseline;display: inline; font-size: 20px; padding: 4px; margin: 0 0 0 5px; height: 37px">More..</button>
+                                    <button class="button"
+                                            style="vertical-align: baseline;display: inline; font-size: 20px; padding: 4px; margin: 0 0 0 5px; height: 37px">
+                                        More..
+                                    </button>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="list alink alink-lite" style="padding: 10px 10px 10px 32px ;">
+                        Add Non Particle Interaction ...
                     </div>
                 </div>
             </div>
@@ -59,9 +72,9 @@
                     Passive Interactions (For Reference in Genetic Algorithm)
                 </span>
                 <div class="list-group-content">
-                    <div class="list" style="padding-left: 32px;">
+                    <div class="list alink-lite" ng-if="passive_interaction.length>0" style="padding-left: 32px;">
                         <table class="table">
-                            <thead ng-if="passive_interaction.length>0">
+                            <thead>
                             <tr>
                                 <th class="">Regarded As</th>
                                 <th class="">By</th>
@@ -70,19 +83,23 @@
                             </thead>
                             <tbody>
                             <tr ng-repeat="i in passive_interaction" style="font-size: 24px;">
-                                <td style="padding: 5px">{{i.asTarget}}</td>
-                                <td>{{i.by}}</td>
-                                <td>{{i.amount}}</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <button class="button"> Add New Passive Interaction</button>
+                                <td style="padding: 5px">
+                                    <hover-input text="i.asTarget" font-size="'24px'"></hover-input>
                                 </td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <select ng-model="i.by">
+                                        <option ng-selected="i.by==x.name" ng-repeat="x in system.agent_descriptions" value="{{::x.name}}">{{::x.name}}</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <hover-input text="i.amount" font-size="'24px'"></hover-input>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div class="list alink alink-lite" style="padding: 10px 10px 10px 32px ;">
+                        Add New Passive Interaction ...
                     </div>
                 </div>
             </div>
