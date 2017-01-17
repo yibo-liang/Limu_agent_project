@@ -27,6 +27,26 @@ app.directive("systemDisplay", ["$rootScope", "$timeout", function ($rootScope, 
             });
         });
 
+        scope.hover_agent=null;
+
+        scope.render_hover=function(){
+            if (scope.hover_agent!==null){
+                var data=[];
+
+
+            }
+        }
+
+        scope.hover_at=function(d){
+            scope.hover_agent=d;
+        }
+
+        scope.leave_hover=function(){
+            scope.hover_agent=null;
+        }
+
+
+
         scope.render = function () {
             update_display_agents(scope.system, displays.agent_view);
             render_display_agents(scope.system, displays.agent_view);

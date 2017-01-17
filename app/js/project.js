@@ -21,7 +21,9 @@ function new_particle(name, growth) {
     }
     return {
         name: name,
-        growth: growth
+        growth: growth,
+        color: stringToColour(name)
+
     }
 }
 
@@ -259,7 +261,10 @@ function random_xy(x, y, r) {
 
 }
 
-function init_display_agents(system, container) {
+var agent_mousehover_callback = null;
+var agent_mouseleave_callback = null;
+
+function init_display_agents(system, container, _agent_mousehover_callback, _agent_mouseleave_callback) {
     var d_agents = [];
     for (agent_name in system.agent_list) {
         var num = system.agent_list[agent_name];
@@ -277,6 +282,8 @@ function init_display_agents(system, container) {
             })
         }
     }
+    agent_mousehover_callback = _agent_mousehover_callback;
+    agent_mouseleave_callback = _agent_mouseleave_callback;
     system.agent_display = d_agents;
 }
 
@@ -309,12 +316,16 @@ function update_display_agents(system, container) {
         return Math.log(x) / Math.log(10);
     };
 
+    var size_by_num = function (x) {
+        return 4 + (1 - sigmoid(logx(x))) * 40;
+    }
+
     for (agent_name in system.agent_list) {
         var num = system.agent_list[agent_name];
 
         for (var i = 0; i < num; i++) {
             if (typeof temp_dict[agent_name][i] !== "undefined") {
-                temp_dict[agent_name][i].display_r = 2 + (1 - sigmoid(logx(num))) * 30;
+                temp_dict[agent_name][i].display_r = size_by_num(num);
                 d_agents.push(temp_dict[agent_name][i]);
 
 
@@ -330,7 +341,7 @@ function update_display_agents(system, container) {
                 id: i,
                 x: x,
                 y: y,
-                display_r: 2 + (1 - sigmoid(logx(num))) * 30
+                display_r: size_by_num(num)
             })
         }
     }
@@ -363,7 +374,7 @@ var stringToColour = function (str) {
     }
     return colour;
 };
-;
+
 
 function render_display_agents(system, container) {
     var interval = 1000;
@@ -399,7 +410,13 @@ function render_display_agents(system, container) {
         .style("fill", function (d) {
             return stringToColour(d.agent);
         })
-        .attr("fill-opacity", 0);
+        .attr("fill-opacity", 0)
+        .on("mouseover", function (d) {
+            agent_mousehover_callback(d);
+        })
+        .on("mouseleave", function (d) {
+            agent_mouseleave_callback(d);
+        });
 
     circle_enter.transition()
         .duration(interval)
@@ -437,6 +454,43 @@ function render_display_agents(system, container) {
         .remove();
 }
 
+function agent_interact_relation(agent1_name, agent2_name, system) {
+    var agent1 = null;
+    var agent2 = null;
+    for (var i = 0; i < system.agent_descriptions.length; i++) {
+        var agent_desc = system.agent_descriptions[i];
+        if (agent_desc.name == agent1_name) {
+            agent1 = agent_desc;
+        } else if (agent_desc.name == agent2_name) {
+            agent2 = agent_desc;
+        }
+    }
+    if (agent1 == null || agent2 == null) {
+        return 0
+    }
+    var particle_dict = {};
+    for (var i = 0; i < agent1.particle_interaction.length; i++) {
+        particle_dict[agent1.particle_interaction[i].name] = -1;
+    }
+    for (var i = 0; i < agent2.particle_interaction.length; i++) {
+        if (typeof particle_dict[agent2.particle_interaction[i].name] !== "undefined") {
+            particle_dict[agent2.particle_interaction[i].name] = 1;
+        }else{
+            particle_dict[agent2.particle_interaction[i].name] = 0;
+        }
+    }
+    return particle_dict;
+
+}
+
+function render_agent_connection(system, agent_instance, canvas) {
+    var x = agent_instance.x;
+    var y = agent_instance.y;
+    var r = agent_instance.r;
+
+
+}
+
 function init_display(agent_view_container, info_view_container) {
     var container = d3.select("#" + agent_view_container);
     var h = $("#" + agent_view_container).height() - 1;
@@ -449,6 +503,11 @@ function init_display(agent_view_container, info_view_container) {
         .attr("width", w)
         .attr("id", "agent_view");
 
+    var canvas = container.append("canvas")
+        .attr("height", h)
+        .attr("width", w)
+        .style("z-index", "-10");
+
     var container = d3.select("#" + info_view_container);
     var h = $("#" + info_view_container).height() - 1;
     var w = $("#" + info_view_container).width() - 1;
@@ -458,8 +517,10 @@ function init_display(agent_view_container, info_view_container) {
         .attr("height", h)
         .attr("width", w)
         .attr("id", "info_view");
+
     return {
         agent_view: left_container,
-        info_view: right_container
+        info_view: right_container,
+        canvas: canvas
     }
 }
