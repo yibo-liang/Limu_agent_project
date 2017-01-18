@@ -282,7 +282,7 @@ function step(system) {
 }
 
 function random_xy(x, y, r) {
-    var l = Math.random() * 10;
+    var l = Math.random() * 50 + 25;
     var dr = r + 1;
     while (dr > r) {
 
@@ -457,13 +457,13 @@ function render_display_agents(system, container) {
         })
         .attr("fill-opacity", 0)
         .on("mouseover",
-            function(d){
-                high_lighted_instances=[{ins:d, dom: d3.select(this)}]
+            function (d) {
+                high_lighted_instances = [{ins: d, dom: d3.select(this)}]
             }
         )
         .on("mouseleave",
-            function(d){
-                high_lighted_instances=[];
+            function (d) {
+                high_lighted_instances = [];
             }
         );
 
@@ -708,8 +708,8 @@ function draw_lines(system, d3canvas, d3svg) {
                     continue
                 }
 
-                var x2=parseFloat(high_lighted_instances[j].dom.attr("cx"));
-                var y2=parseFloat(high_lighted_instances[j].dom.attr("cy"));
+                var x2 = parseFloat(high_lighted_instances[j].dom.attr("cx"));
+                var y2 = parseFloat(high_lighted_instances[j].dom.attr("cy"));
 
 
                 var coor2 = {

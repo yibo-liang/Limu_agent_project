@@ -77,7 +77,7 @@ app.directive("systemDisplay", ["$rootScope", "$timeout", function ($rootScope, 
             scope.render();
             scope.step();
             if (scope.show) {
-                $timeout(scope.visualise, 1000);
+                $timeout(scope.visualise, 950);
             }
         }
 
