@@ -456,12 +456,16 @@ function render_display_agents(system, container) {
             return stringToColour(d.agent);
         })
         .attr("fill-opacity", 0)
-        .on("mouseover", function (d) {
-            agent_mousehover_callback(d);
-        })
-        .on("mouseleave", function (d) {
-            agent_mouseleave_callback(d);
-        });
+        .on("mouseover",
+            function(d){
+                high_lighted_instances=[{ins:d, dom: d3.select(this)}]
+            }
+        )
+        .on("mouseleave",
+            function(d){
+                high_lighted_instances=[];
+            }
+        );
 
     circle_enter.transition()
         .duration(interval)
@@ -542,13 +546,13 @@ function agent_particle_interact_relation(agent1_name, agent2_name, system) {
 
 
 var global_line_offset = 0;
-var linedash = [1, 15];
+var linedash = [1, 40];
 
 function draw_line_between(agent_ins1, agent_ins2, coor1, coor2, particle_relation, canvas) {
 
 
     var height = canvas.height;
-    var offset = height / 2;
+    var offset = 0 / 2;
     var sum = linedash.reduce(function (a, b) {
         return a + b;
     }, 0);
@@ -587,15 +591,15 @@ function draw_line_between(agent_ins1, agent_ins2, coor1, coor2, particle_relati
         }
         var context = canvas.getContext('2d');
         context.beginPath();
-        context.lineWidth = 2;
+        context.lineWidth = 5;
         context.lineCap = "round";
         context.setLineDash(linedash);
         context.lineDashOffset = global_line_offset + (count / psum) * sum;
         var color = stringToColour(particle_name);
         //console.log(direction)
         if (direction == "+-") {
-            var x1 = coor1.x + offset;
-            var y1 = coor1.y + offset;
+            var x1 = coor1.x;
+            var y1 = coor1.y;
             var x2 = coor2.x + offset;
             var y2 = coor2.y + offset;
 
@@ -611,10 +615,10 @@ function draw_line_between(agent_ins1, agent_ins2, coor1, coor2, particle_relati
             context.lineTo(x2, y2);
             context.stroke();
         } else if (direction == "-+") {
-            var x1 = coor1.x + offset;
-            var y1 = coor1.y + offset;
-            var x2 = coor2.x + offset;
-            var y2 = coor2.y + offset;
+            var x1 = coor2.x;
+            var y1 = coor2.y;
+            var x2 = coor1.x + offset;
+            var y2 = coor1.y + offset;
 
             var gradient = context.createLinearGradient(x1, y1, x2, y2);
             var c = hexToRgb(color);
@@ -636,7 +640,7 @@ var high_lighted_instances = [];
 
 
 function highlight(ins) {
-    high_lighted_instances = [ins]
+    high_lighted_instances = [{ins: ins, dom: d3.select(this)}];
     // var hash = function (ins) {
     //     return ins.agent + ins.id;
     // };
@@ -688,8 +692,8 @@ function draw_lines(system, d3canvas, d3svg) {
         .each(function (d, i) {
             var _this = d3.select(this);
             //console.log("this", _this, _this._groups[0][0]);
-            var x = _this._groups[0][0].getAttribute("cx");
-            var y = _this._groups[0][0].getAttribute("cy");
+            var x = parseFloat(_this.attr("cx"));
+            var y = parseFloat(_this.attr("cy"));
 
             var coor1 = {
                 x: x,
@@ -698,15 +702,19 @@ function draw_lines(system, d3canvas, d3svg) {
             //console.log("coor1", coor1)
             for (var j = 0; j < high_lighted_instances.length; j++) {
                 var ins1 = d;
-                var ins2 = high_lighted_instances[j];
+                var ins2 = high_lighted_instances[j].ins;
 
                 if (!ins1 || !ins2) {
                     continue
                 }
 
+                var x2=parseFloat(high_lighted_instances[j].dom.attr("cx"));
+                var y2=parseFloat(high_lighted_instances[j].dom.attr("cy"));
+
+
                 var coor2 = {
-                    x: ins2.x,
-                    y: ins2.y
+                    x: x2,
+                    y: y2
                 }
                 if (ins1 !== ins2 && ins1.agent !== ins2.agent && distance(ins1, ins2) < max_distance) {
                     var particle_relation = agent_particle_interact_relation(ins1.agent, ins2.agent, system);
@@ -773,7 +781,7 @@ function init_display(agent_view_container, info_view_container) {
         .attr("height", h)
         .attr("width", w)
         .style("z-index", "0")
-        .style("background-color", "rgba(0,0,0,0.4)")
+        .style("background-color", "rgba(0,0,0,0.0)")
         .style("position", "absolute")
         .style("top", "0")
         .style("left", "0");
