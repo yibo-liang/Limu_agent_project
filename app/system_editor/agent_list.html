@@ -7,36 +7,35 @@
         </a>
     </div>
 </div>
-<div class="listview-outlook" style=" max-height: 450px; overflow-y: auto">
+<div class="listview-outlook smooth" style=" max-height: 450px; overflow-y: auto">
     <div class="list" style="padding-top: 10px; padding-bottom: 10px; text-align: left"
-         ng-repeat="i in system.agent_descriptions">
-        <div class="list-content">
+         ng-repeat="i in system.agent_descriptions ">
+        <div class="list-content ">
 
 
             <div style="position: relative">
                 <div style="display: block; right:10px; position: absolute; padding: 0 10px 0 0">
-                    <!--<div class="label-small">Amount</div>-->
-                    <!--<a style="display: inline-block" href="#"><span class="mif-minus fg-gray"></span></a>-->
                     <div class="bold" style="font-size: 32px; display: inline-block">
-                        <hover-input reject-empty="" text="system.agent_list[i.name] ?
-                        system.agent_list[i.name] : 0" font-size="'42px'"></hover-input>
+                        <hover-input reject-empty="1" text="system.agent_list[i.name]" font-size="'42px'"></hover-input>
                     </div>
-                    <!--<a style="display: inline-block" href="#"><span class="mif-plus fg-gray"></span></a>-->
                 </div>
             </div>
 
 
             <!--<span class="bold">Agent:</span>-->
-            <div class="list-large-text">
-                <hover-input reject-empty="1" text="i.name" font-size="'26px'"></hover-input>
+            <div class="list-large-text bold">
+                <hover-input reject-empty="1" text="i.name" font-size="'26px'"
+                             on-change-callback="change_agent_name"></hover-input>
             </div>
 
 
-            <div style="padding-top: 15px;">
-                <span style="display: inline!important;" class="bold">Space</span>
-                <span>
+            <div style="padding-top: 4px;">
+                <span style="display: inline!important;" class="">space  : </span>
                 <hover-input reject-empty="1" text="i.space" font-size="'16px'"></hover-input>
-                </span>
+            </div>
+            <div style="padding-top: 2px;">
+                <span style="display: inline!important;" class="">growth : </span>
+                <hover-input reject-empty="1" text="i.growth" font-size="'16px'"></hover-input>
             </div>
 
 
@@ -59,6 +58,6 @@
 </div>
 
 <div data-role="dialog" id="interaction_dialog" data-overlay="true" data-overlay-color="op-dark"
-     style="width: 500px; height: 600px" data-close-button="false">
+     style="width: 600px; height: 600px" data-close-button="false">
     <interactions></interactions>
 </div>

@@ -1,12 +1,12 @@
-<div style="width: 600px; height: 600px; position: relative">
-    <h3 style="padding :10px">Interactions of Agent : {{agent.name}}</h3>
+<div style="width: 600px; height: 600px; position: relative; overflow-y: auto">
+    <h3 style="padding :10px">interactions of agent : {{agent.name}}</h3>
     <div class="h-divider"></div>
     <div style="width: 100%; height: calc(100% - 11px); overflow-y: auto">
 
         <div class="listview-outlook">
             <div class="list-group" style="font-size: 20px ;">
                 <span class="list-group-toggle">
-                    Particle Interactions
+                    particle interactions
                 </span>
                 <div class="list-group-content">
                     <div class="list alink-lite" style="padding-left: 32px;" ng-repeat="i in particle_interaction">
@@ -15,61 +15,80 @@
                             <div class="row cells3">
                                 <div class="cell colspan2">
                                     <select ng-model="i.name">
-                                        <option ng-if="!already_has_pi(i) || i.name==x.name" ng-selected="i.name==x.name" ng-repeat="x in system.particle_descriptions" value="{{::x.name}}">{{::x.name}}</option>
+                                        <option ng-if="!already_has_pi(i) || i.name==x.name"
+                                                ng-selected="i.name==x.name"
+                                                ng-repeat="x in system.particle_descriptions" value="{{::x.name}}">
+                                            {{::x.name}}
+                                        </option>
                                     </select>
                                 </div>
                                 <div class="cell">
-                                    <hover-input text="i.amount" font-size="'20px'"></hover-input>
+                                    <hover-input reject-empty="true" force-number="float" text="i.amount"
+                                                 font-size="'20px'"></hover-input>
                                 </div>
                             </div>
 
                         </div>
                     </div>
                     <div class="link alink alink-lite" style="padding: 10px 10px 10px 32px ;"
-                         ng-if="system.particle_descriptions.length>particle_interaction.length">
-                        Add Particle Interaction ...
+                         ng-if="system.particle_descriptions.length>particle_interaction.length"
+                         ng-click="add_pi()">
+                        add particle interaction ...
 
                     </div>
                 </div>
             </div>
             <div class="list-group" style="font-size: 20px ;">
                 <span class="list-group-toggle">
-                    Non Particle Interactions
+                    non particle interactions
                 </span>
                 <div class="list-group-content">
                     <div class="list alink-lite" ng-repeat="i in non_particle_interaction" style="padding-left: 32px;">
                         <div class="grid">
                             <div class="row cells7">
-                                <div class="cell colspan1" style="vertical-align: baseline;">
-                                    {{i.name}}
+                                <div class="cell colspan2" style="padding: 5px; font-size: 26px;">
+
+                                    <hover-input reject-empty="1" text="i.name"></hover-input>
                                 </div>
-                                <div class="cell colspan1" style="vertical-align: baseline;">
-                                    {{i.amount}}
+                                <div class="cell "
+                                     style="padding: 5px; font-size: 26px;">
+                                    <hover-input reject-empty="1" force-number="float" text="i.amount"></hover-input>
                                 </div>
-                                <div class="cell " style="vertical-align: baseline;">
-                                    from
-                                </div>
-                                <div class="cell colspan4">
-                                    <div ng-repeat="(agent_name, amount) in i.choice"
-                                         style="vertical-align: text-bottom;padding: 4px;display: inline; border-width: 1px; border-style: dashed; border-color: #d7d7d7">
-                                        {{agent_name}} {{amount}}
+                                <div class="cell colspan3">
+                                    <div class="toolbar">
+                                        <div class="image-button icon-right"
+                                             ng-repeat="(agent_name, amount) in i.choice"
+                                             style="padding-top: 4px; padding-bottom: 4px">
+                                            <select ng-model="agent_name" style="padding: 3px;">
+                                                <option ng-selected="agent_name==x.name"
+                                                        ng-repeat="x in system.agent_descriptions" value="{{::x.name}}">
+                                                    {{::x.name}}
+                                                </option>
+                                            </select>
+                                            <hover-input reject-empty="1" force-number="int" text="amount"
+                                                         font-size="'22px'"></hover-input>
+                                            <span class="icon mif-cross" ng-click="delete_choice(i, agent_name)"></span>
+                                        </div>
+                                        <div class="toolbar-button" ng-click="new_choice(i)">
+                                            <span class="mif-plus"></span>
+                                        </div>
                                     </div>
-                                    <button class="button"
-                                            style="vertical-align: baseline;display: inline; font-size: 20px; padding: 4px; margin: 0 0 0 5px; height: 37px">
-                                        More..
-                                    </button>
+                                </div>
+                                <div class="cell "
+                                     style="padding: 5px; font-size: 26px;">
+                                    <span class="alink fg-red mif-cross" ng-click="del_npi($index)"></span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="list alink alink-lite" style="padding: 10px 10px 10px 32px ;">
-                        Add Non Particle Interaction ...
+                    <div class="list alink alink-lite" style="padding: 10px 10px 10px 32px ;" ng-click="new_npi()">
+                        add non particle interaction ...
                     </div>
                 </div>
             </div>
             <div class="list-group" style="font-size: 20px ;">
                   <span class="list-group-toggle">
-                    Passive Interactions (For Reference in Genetic Algorithm)
+                    passive Interactions (for reference in genetic algorithm)
                 </span>
                 <div class="list-group-content">
                     <div class="list alink-lite" ng-if="passive_interaction.length>0" style="padding-left: 32px;">
@@ -88,7 +107,9 @@
                                 </td>
                                 <td>
                                     <select ng-model="i.by">
-                                        <option ng-selected="i.by==x.name" ng-repeat="x in system.agent_descriptions" value="{{::x.name}}">{{::x.name}}</option>
+                                        <option ng-selected="i.by==x.name" ng-repeat="x in system.agent_descriptions"
+                                                value="{{::x.name}}">{{::x.name}}
+                                        </option>
                                     </select>
                                 </td>
                                 <td>
@@ -98,15 +119,17 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="list alink alink-lite" style="padding: 10px 10px 10px 32px ;">
-                        Add New Passive Interaction ...
+                    <div class="list alink alink-lite" style="padding: 10px 10px 10px 32px ;"
+                         ng-click="new_passive_i()">
+                        add new passive interaction ...
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <button class="button" style="position: absolute; top: 101%">Save Interaction</button>
-    <button class="button" style="position: absolute; top: 101%; left: 150px"
-            ng-click="close()">Cancel
-    </button>
+
 </div>
+<button class="button" style="position: absolute; top: 101%" ng-click="save()">Save Interaction</button>
+<button class="button" style="position: absolute; top: 101%; left: 150px"
+        ng-click="close()">Cancel
+</button>

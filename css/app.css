@@ -36,12 +36,12 @@
     /* border-bottom-color: #848b8f; */
     outline: none;
     margin-top:1px;
-    min-width: 80px;
+    min-width: 40px;
 }
 
 .hover-input-text{
     text-align: left;
-    min-width: 80px;
+    min-width: 40px;
 }
 
 .label-small{
@@ -74,4 +74,11 @@ select{
 
 select:hover{
     border-bottom-width: 1px;
+}
+
+.smooth div {
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition: all 0.3s, -webkit-transform 0.5s; /* Safari */
+    transition: all 0.3s;
 }

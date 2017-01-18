@@ -3,36 +3,41 @@
         <a href="#">
             <div style="padding: 15px" ng-click="add_particle()">
 
-                Add New Particle...
+                add new particle...
             </div>
         </a>
     </div>
 </div>
-<div class="listview-outlook" style="position: relative; overflow-y: auto; max-height: 450px;">
+<div class="listview-outlook smooth" style="position: relative; overflow-y: auto; max-height: 450px;">
 
-    <div class="list" style="padding-top: 10px; padding-bottom: 10px; text-align: left"
+    <div class="list " style="padding-top: 10px; padding-bottom: 10px; text-align: left; position:relative"
          ng-repeat="i in system.particle_descriptions"
          ng-mouseover="hover[i.name]=true"
          ng-mouseleave="hover[i.name]=false">
-        <div class="list-content">
+        <div class="list-content ">
 
             <!--<span class="bold">-->
             <!--Particle:-->
             <!--</span>-->
-            <div style="display: inline-block; right:10px; position: absolute; padding: 10px; width: 80px; text-align: center">
+            <div style="display: inline-block; right:10px; top: 0; position: absolute; padding: 10px; text-align: center">
                 <!--<a style="display: inline" href="#" ng-if="hover[i.name]===true"><span class="mif-minus fg-gray"></span></a>-->
-                <div>
-                    <hover-input reject-empty="1" text="system.particle_list[i.name]"  font-size="'32px'" font-weight="700"></hover-input>
-                </div>
+                    <hover-input reject-empty="1" force-number="int" text="system.particle_list[i.name]"  font-size="'32px'" font-weight="700"></hover-input>
                 <!--<a style="display: inline" href="#" ng-if="hover[i.name]===true"><span class="mif-plus fg-gray"></span></a>-->
             </div>
 
             <div class="list-large-text">
-                <hover-input text="i.name" on-change-callback="change_particle_name" reject-empty="1" ></hover-input>
+                <hover-input reject-empty="1" text="i.name" on-change-callback="change_particle_name" ></hover-input>
             </div>
             <div style="padding-top: 10px; color: #cacaca">
                 Growth (per step):
-                <hover-input  reject-empty="1"  text="i.growth" font-size="'20px'" color="'#cacaca'"></hover-input>
+                <hover-input  reject-empty="1" force-number="float" text="i.growth" font-size="'20px'" color="'#cacaca'"></hover-input>
+            </div>
+
+            <div ng-if="hover[i.name]" class="toolbar" style="position: absolute; right:0; bottom: 0">
+                <div class="toolbar-button" ng-click="delete_particle(i)">
+                    <span class="mif-bin"></span>
+                </div>
+
             </div>
 
         </div>

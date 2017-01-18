@@ -13,48 +13,51 @@ app.directive("systemDisplay", ["$rootScope", "$timeout", function ($rootScope, 
     function link(scope, element, attrs) {
         var displays = init_display("agent_view_div", "info_view_div");
 
-        scope.system = null;
+        scope.system = [];
         scope.show = false;
+
+
+
         scope.$on("SYS_DISPLAY", function (event, arg) {
             console.log(arg);
-            scope.system = arg;
+            scope.system[0] = arg;
             scope.show = true;
 
             $timeout(function () {
 
-                init_display_agents(scope.system, displays.agent_view);
+                init_display_agents(scope.system[0], displays.agent_view);
                 scope.visualise();
+                scope.line_visualise();
             });
         });
 
-        scope.hover_agent=null;
+        scope.hover_agent = null;
 
-        scope.render_hover=function(){
-            if (scope.hover_agent!==null){
-                var data=[];
+        scope.render_hover = function () {
+            if (scope.hover_agent !== null) {
+                var data = [];
 
 
             }
         }
 
-        scope.hover_at=function(d){
-            scope.hover_agent=d;
+        scope.hover_at = function (d) {
+            scope.hover_agent = d;
         }
 
-        scope.leave_hover=function(){
-            scope.hover_agent=null;
+        scope.leave_hover = function () {
+            scope.hover_agent = null;
         }
-
 
 
         scope.render = function () {
-            update_display_agents(scope.system, displays.agent_view);
-            render_display_agents(scope.system, displays.agent_view);
-            random_move_agent_display(scope.system, displays.agent_view);
+            update_display_agents(scope.system[0], displays.agent_view);
+            render_display_agents(scope.system[0], displays.agent_view);
+            random_move_agent_display(scope.system[0], displays.agent_view);
         };
 
         scope.step = function () {
-            step(scope.system);
+            step(scope.system[0]);
         };
 
         scope.autostepping = true;
@@ -66,6 +69,8 @@ app.directive("systemDisplay", ["$rootScope", "$timeout", function ($rootScope, 
         };
         scope.hide = function () {
             scope.show = false;
+            unload_display(displays.agent_view)
+            scope.system = [];
         };
 
         scope.visualise = function () {
@@ -73,6 +78,16 @@ app.directive("systemDisplay", ["$rootScope", "$timeout", function ($rootScope, 
             scope.step();
             if (scope.show) {
                 $timeout(scope.visualise, 1000);
+            }
+        }
+
+        scope.line_visualise = function () {
+            //console.log(scope.system)
+            if (scope.system.length > 0) {
+                draw_lines(scope.system[0],displays.canvas, displays.agent_view);
+                if (scope.show){
+                    $timeout(scope.line_visualise,20);
+                }
             }
         }
     }
@@ -174,9 +189,12 @@ app.directive("interactions", [function () {
         scope.display = function () {
 
             if (scope.agent.particle_interaction.length == 0) {
-                for (var i = 0; i < scope.system.particle_descriptions; i++) {
+                for (var i = 0; i < scope.system.particle_descriptions.length; i++) {
                     var p = scope.system.particle_descriptions[i];
-                    scope.particle_interaction.push(particle_interaction(p.name, 0));
+                    var new_pi = particle_interaction(p.name, 0);
+                    console.log(scope.particle_interaction, new_pi)
+                    scope.particle_interaction.push(new_pi);
+
                 }
 
             } else {
@@ -191,15 +209,24 @@ app.directive("interactions", [function () {
             console.log(scope.agent.non_particle_interaction)
         };
 
-        scope.already_has_pi=function(pi){
-            for (var i=0;i<scope.particle_interaction.length;i++){
-                console.log(scope.particle_interaction[i].name)
-                if (scope.particle_interaction[i].name==pi.name){
+        scope.already_has_pi = function (pi) {
+            for (var i = 0; i < scope.particle_interaction.length; i++) {
+                //console.log(scope.particle_interaction[i].name)
+                if (scope.particle_interaction[i].name == pi.name) {
                     return true;
                 }
             }
             return false;
 
+        }
+        scope.choice_in_np = function (name, np) {
+            for (choice_name in np.choice) {
+                //console.log("cname", choice_name, name)
+                if (choice_name == name) {
+                    return true;
+                }
+            }
+            return false;
         }
 
         scope.$on("EDIT_INTERACTION", function (elem, args) {
@@ -212,9 +239,66 @@ app.directive("interactions", [function () {
             scope.display();
         })
 
-        scope.close=function(){
+        scope.new_choice = function (np) {
+            var name = null;
+            for (var i = 0; i < scope.system.agent_descriptions.length; i++) {
+                var agent_desc = scope.system.agent_descriptions[i];
+                if (!scope.choice_in_np(agent_desc.name, np)) {
+                    name = agent_desc.name;
+                }
+            }
+
+            if (name !== null) {
+                console.log(np)
+                np.choice[name] = 0;
+            }
+        }
+
+        scope.delete_choice = function (i, choice) {
+            delete i.choice[choice];
+        }
+
+        scope.add_pi = function () {
+            var p = null;
+            for (var i = 0; i < scope.system.particle_descriptions.length; i++) {
+                var pi = scope.system.particle_descriptions[i];
+                if (!scope.already_has_pi(pi)) {
+                    p = pi;
+                }
+            }
+            scope.particle_interaction.push({name: p.name, amount: 0});
+        }
+
+        scope.new_npi = function () {
+            var npi = non_particle_interaction(makeid(5), 0, {});
+            scope.non_particle_interaction.push(npi);
+        }
+
+        scope.del_npi = function (index) {
+            scope.non_particle_interaction.splice(index, 1);
+        }
+
+        scope.new_passive_i = function () {
+            var np = passive_interaction(makeid(5), scope.system.agent_descriptions[0].name, 0);
+            scope.passive_interaction.push(np);
+        }
+
+        scope.close = function () {
             metroDialog.close('#interaction_dialog');
 
+        }
+
+        scope.save = function () {
+            scope.agent.particle_interaction = [];
+            for (var i = 0; i < scope.particle_interaction.length; i++) {
+                var t = scope.particle_interaction[i];
+                if (t.amount !== 0) {
+                    scope.agent.particle_interaction.push(t);
+                }
+            }
+            scope.agent.non_particle_interaction = scope.non_particle_interaction;
+            scope.agent.passive_interaction = scope.passive_interaction;
+            scope.close();
         }
     }
 
@@ -236,6 +320,9 @@ app.directive("particleList", [function () {
             var oldname = callback_args.old;
             var newname = callback_args.new;
             return change_particle_name(scope.system, oldname, newname);
+        }
+        scope.delete_particle = function (p) {
+            delete_particle(scope.system, p);
         }
     }
 
@@ -277,7 +364,7 @@ app.directive("hoverInput", ["$timeout", function ($timeout) {
         function match_size() {
             scope.style = {
                 color: scope.color,
-                "min-height": scope.fontSize+"",
+                "min-height": scope.fontSize + "",
                 "font-size": scope.fontSize + "",
                 "border-width": "0",
                 "font-family": "\"Segoe UI\", \"Open Sans\", sans-serif, serif",
@@ -298,6 +385,7 @@ app.directive("hoverInput", ["$timeout", function ($timeout) {
 
         $timeout(function () {
             scope.dtext = scope.text;
+            console.log("re", scope.rejectEmpty)
             console.log(scope.text);
             if (typeof scope.color === "undefined") {
                 scope.color = "#101010";
@@ -341,26 +429,30 @@ app.directive("hoverInput", ["$timeout", function ($timeout) {
             scope.hover = false;
             var temp = scope.text;
             console.log(scope.dtext, scope.rejectEmpty)
-            match_container_size();
-            if (scope.forceNumber == "int"){
-                scope.dtext=parseInt(scope.dtext);
-            }else if (scope.forceNumber=="float"){
-                scope.dtext=parseFloat(scope.dtext);
-            }
-            if (scope.dtext=="" || scope.text==null){
-                if (scope.rejectEmpty){
-                    scope.dtext=temp;
+            if (scope.dtext == "" || scope.text == null) {
+                if (scope.rejectEmpty) {
+                    scope.dtext = temp;
                     return;
                 }
             }
+            if (scope.forceNumber == "int") {
+                scope.dtext = parseInt(scope.dtext);
+                scope.dtext = scope.dtext || 0;
+            } else if (scope.forceNumber == "float") {
+                scope.dtext = parseFloat(scope.dtext);
+                scope.dtext = scope.dtext || 0;
+            }
             if (typeof scope.onChangeCallback !== "undefined") {
-                var validate=scope.onChangeCallback({old: temp, new: scope.dtext});
-                if (validate){
+                var validate = scope.onChangeCallback({old: temp, new: scope.dtext});
+                if (validate) {
                     scope.text = scope.dtext;
                 }
-            }else{
+            } else {
                 scope.text = scope.dtext;
             }
+            match_size();
+
+            match_container_size();
             console.log("mouseleave")
         }
     }
@@ -373,9 +465,8 @@ app.directive("hoverInput", ["$timeout", function ($timeout) {
             color: "=",
             fontFamily: "=",
             fontWeight: "=",
-            isNumber: "=",
-            rejectEmpty: "=",
-            forceNumber: "="
+            rejectEmpty: "@rejectEmpty",
+            forceNumber: "@forceNumber"
         },
         restrict: "E",
         templateUrl: "app/template/hover_input.html",
