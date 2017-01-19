@@ -300,6 +300,24 @@ function random_xy(x, y, r) {
 var agent_mousehover_callback = null;
 var agent_mouseleave_callback = null;
 
+function default_velocity() {
+    return 7 + Math.random() * 6;
+}
+
+var sigmoid = function (x) {
+    return 1 / (1 + Math.exp(-x * 1));
+};
+
+
+var logx = function (x) {
+    return Math.log(x) / Math.log(10);
+};
+
+var size_by_num = function (x) {
+    return 2 + (1 - sigmoid(logx(x))) * 40;
+}
+
+
 function init_display_agents(system, container, _agent_mousehover_callback, _agent_mouseleave_callback) {
     var d_agents = [];
 
@@ -308,14 +326,19 @@ function init_display_agents(system, container, _agent_mousehover_callback, _age
         for (var i = 0; i < num; i++) {
 
             var angle = Math.random() * Math.PI * 2;
-            var l = Math.random() * container.attr("height") / 2 - 10;
-            var x = Math.cos(angle) * l;
-            var y = Math.sin(angle) * l;
+            var r = container.attr("height") / 2 - 10;
+            var coor = random_xy_in_r(r);
+            var x = coor.x;
+            var y = coor.y;
+
             d_agents.push({
                 agent: agent_name,
                 id: i,
                 x: x,
-                y: y
+                y: y,
+                angle: angle,
+                v: default_velocity(),
+                display_r: size_by_num(num),
             })
         }
     }
@@ -351,20 +374,6 @@ function update_display_agents(system, container) {
         }
         temp_dict[name][d.id] = d;
     }
-
-    var sigmoid = function (x) {
-        return 1 / (1 + Math.exp(-x * 1));
-    };
-
-
-    var logx = function (x) {
-        return Math.log(x) / Math.log(10);
-    };
-
-    var size_by_num = function (x) {
-        return 2 + (1 - sigmoid(logx(x))) * 40;
-    }
-
     for (agent_name in system.agent_list) {
         var num = system.agent_list[agent_name];
 
@@ -380,13 +389,15 @@ function update_display_agents(system, container) {
             var coor = random_xy_in_r(r);
             var x = coor.x;
             var y = coor.y;
-
+            var angle = Math.random() * 2 * Math.PI;
             d_agents.push({
                 agent: agent_name,
                 id: i,
                 x: x,
                 y: y,
-                display_r: size_by_num(num)
+                display_r: size_by_num(num),
+                angle: angle,
+                v: default_velocity()
             })
         }
     }
@@ -404,6 +415,36 @@ function random_move_agent_display(system, container) {
         d.x = nxy.x;
         d.y = nxy.y;
         system.agent_display[i] = d;
+    }
+}
+
+function move_agent_display(system, container) {
+
+    var max_r = container.attr("height") / 2 - 10;
+    var m2 = max_r * max_r;
+    for (var i = 0; i < system.agent_display.length; i++) {
+        var d = system.agent_display[i];
+        var dx = Math.cos(d.angle) * d.v;
+        var dy = Math.sin(d.angle) * d.v;
+        d.x += dx;
+        d.y += dy;
+
+        if (d.x * d.x + d.y * d.y > m2) {
+            //going out of box, turn around according to the tangent
+            var r2o = Math.atan2(d.y, d.x);
+            var r = d.angle;
+            d.x -= dx;
+            d.y -= dy;
+            if (r2o > Math.PI / 2) r2o = Math.PI - r2o;
+            if (r2o < -Math.PI / 2) r2o = -Math.PI - r2o;
+            d.angle = -2 * r2o + r;
+            var dx = Math.cos(d.angle) * d.v;
+            var dy = Math.sin(d.angle) * d.v;
+            d.x += dx;
+            d.y += dy;
+
+        }
+
     }
 }
 

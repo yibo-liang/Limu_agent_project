@@ -53,7 +53,7 @@ app.directive("systemDisplay", ["$rootScope", "$timeout", function ($rootScope, 
         scope.render = function () {
             update_display_agents(scope.system[0], displays.agent_view);
             render_display_agents(scope.system[0], displays.agent_view);
-            random_move_agent_display(scope.system[0], displays.agent_view);
+            move_agent_display(scope.system[0], displays.agent_view);
         };
 
         scope.step = function () {
