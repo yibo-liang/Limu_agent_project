@@ -282,7 +282,7 @@ function step(system) {
 }
 
 function random_xy(x, y, r) {
-    var l = Math.random() * 50 + 25;
+    var l = Math.random() * 5 + 5;
     var dr = r + 1;
     while (dr > r) {
 
@@ -586,8 +586,11 @@ function agent_particle_interact_relation(agent1_name, agent2_name, system) {
 }
 
 
+var particle_pixel_size = 2;
 var global_line_offset = 0;
 var linedash = [1, 40];
+
+var max_line_distance = 150;
 
 function draw_line_between(agent_ins1, agent_ins2, coor1, coor2, particle_relation, canvas) {
 
@@ -631,14 +634,35 @@ function draw_line_between(agent_ins1, agent_ins2, coor1, coor2, particle_relati
             continue;
         }
         var context = canvas.getContext('2d');
+
+        var x1 = coor1.x;
+        var y1 = coor1.y;
+        var x2 = coor2.x + offset;
+        var y2 = coor2.y + offset;
+
+        var dx = x1 - x2;
+        var dy = y1 - y2;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        var opacity = (1 - dist / max_line_distance) * 1;
+
         context.beginPath();
-        context.lineWidth = 5;
+        context.setLineDash([0, 0]);
+        context.strokeStyle = "rgba(188,188,188," + opacity * 0.5 + ")";
+        context.moveTo(x1, y1);
+        context.lineTo(x2, y2);
+        context.stroke();
+
+        context.beginPath();
+        context.lineWidth = particle_pixel_size;
         context.lineCap = "round";
         context.setLineDash(linedash);
-        context.lineDashOffset = global_line_offset + (count / psum) * sum;
         var color = stringToColour(particle_name);
         //console.log(direction)
+
         if (direction == "+-") {
+
+            context.lineDashOffset = (global_line_offset + (count / psum) * sum);
+
             var x1 = coor1.x;
             var y1 = coor1.y;
             var x2 = coor2.x + offset;
@@ -646,16 +670,21 @@ function draw_line_between(agent_ins1, agent_ins2, coor1, coor2, particle_relati
 
             var gradient = context.createLinearGradient(x1, y1, x2, y2);
             var c = hexToRgb(color);
-            gradient.addColorStop("0", rgbTorgba(c, 0));
-            gradient.addColorStop("0.5", rgbTorgba(c, 1));
-            gradient.addColorStop("1", rgbTorgba(c, 0.5));
+            gradient.addColorStop("0", rgbTorgba(c, 0.3));
+            gradient.addColorStop("0.2", rgbTorgba(c, 0.6 * opacity));
+            gradient.addColorStop("0.7", rgbTorgba(c, 1 * opacity));
+            gradient.addColorStop("1", rgbTorgba(c, 0.3));
 
 
             context.strokeStyle = gradient;
             context.moveTo(x1, y1);
             context.lineTo(x2, y2);
             context.stroke();
+
+
         } else if (direction == "-+") {
+            context.lineDashOffset = (global_line_offset + (count / psum) * sum);
+
             var x1 = coor2.x;
             var y1 = coor2.y;
             var x2 = coor1.x + offset;
@@ -663,15 +692,18 @@ function draw_line_between(agent_ins1, agent_ins2, coor1, coor2, particle_relati
 
             var gradient = context.createLinearGradient(x1, y1, x2, y2);
             var c = hexToRgb(color);
-            gradient.addColorStop("0", rgbTorgba(c, 0));
-            gradient.addColorStop("0.5", rgbTorgba(c, 1));
-            gradient.addColorStop("1", rgbTorgba(c, 0.5));
+            gradient.addColorStop("0", rgbTorgba(c, 0.3));
+            gradient.addColorStop("0.2", rgbTorgba(c, 0.6 * opacity));
+            gradient.addColorStop("0.7", rgbTorgba(c, 1 * opacity));
+            gradient.addColorStop("1", rgbTorgba(c, 0.3));
+
 
 
             context.strokeStyle = gradient;
             context.moveTo(x1, y1);
             context.lineTo(x2, y2);
             context.stroke();
+
         }
         count += 1;
     }
@@ -720,7 +752,6 @@ var distance = function (ins1, ins2) {
 
 function draw_lines(system, d3canvas, d3svg) {
 
-    var max_distance = 50;
     var canvas = d3canvas["_groups"][0][0];
 
     var context = canvas.getContext("2d");
@@ -757,7 +788,7 @@ function draw_lines(system, d3canvas, d3svg) {
                     x: x2,
                     y: y2
                 }
-                if (ins1 !== ins2 && ins1.agent !== ins2.agent && distance(ins1, ins2) < max_distance) {
+                if (ins1 !== ins2 && ins1.agent !== ins2.agent && distance(ins1, ins2) < max_line_distance) {
                     var particle_relation = agent_particle_interact_relation(ins1.agent, ins2.agent, system);
                     // console.log(particle_relation)
                     draw_line_between(ins1, ins2, coor1, coor2, particle_relation, canvas);
